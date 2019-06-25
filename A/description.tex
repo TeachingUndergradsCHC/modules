@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+
+\usepackage{url}
+
+\newenvironment{list2}{
+  \begin{list}{$\bullet$}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      \setlength{\leftmargin}{0.5in}}}{\end{list}}\newenvironment{list1}{
+  \begin{list}{\ding{113}}{%
+      \setlength{\itemsep}{0in}
+      \setlength{\parsep}{0in} \setlength{\parskip}{0in}
+      \setlength{\topsep}{0in} \setlength{\partopsep}{0in} 
+      \setlength{\leftmargin}{0.17in}}}{\end{list}}
+
+
+\def\fullline{		% hrules only listen to \hoffset
+  \nointerlineskip	% so I have this code	  
+  \moveleft\hoffset\vbox{\hrule width\textwidth} 
+  \nointerlineskip
+}
+
+\renewcommand{\rmdefault}{phv} % arial, uncomment to use times new roman
+\renewcommand{\sfdefault}{phv} % arail, uncomment to use times new roman
+\oddsidemargin=0.0in
+\textwidth=6.0in
+
+\begin{document}
+
+\section{Elementary Notions of Heterogeneous Computing}
+
+\subsection{Description}
+This module introduces fundamental concepts in heterogeneous computing. Notions of concurrency,
+parallelism, and energy efficiency are discussed to explain the motivation  behind the move towards
+heterogeneous processing. Different forms of heterogeneity are introduced including soft
+heterogeneity (i.e., difference in core compute capabilities within a multicore system), CPU-GPU
+heterogeneous execution and System-on-Chip (SoC) design. The module also covers heterogeneity 
+in workload and data with examples from cloud computing and mobile applications. The module concludes
+with a discussion of programmability and performance challenges.
+
+%, including the implications of
+%Amdahl's Law for HC. 
+
+\subsection{Context}
+This module is primarily intended for CS1/CS2 students. Although the module introduces parallel
+computing concepts before moving on to processor heterogeneity, it is ideally suited for a course with some
+coverage of parallel computing material. For example, a CS1 course that incorporates a PDC module from
+~\cite{CSINPARALLEL},~\cite{NSFCDER}, or ~\cite{TUESWEB}. In the absence of PDC coverage, the length
+of this module will need to be increased or it will need to be combined with a PDC module.
+
+\subsection{Topics}
+The HC topics covered in this module are listed below. Bloom's classification is shown in brackets
+\begin{list2}
+\item Concurrency and Parallelism [K]
+\item Multicore Processors [K]
+\item GPGPU [K]
+\item System-on-Chip (e.g., mobile processors)
+\item Energy Efficiency [K]
+\item Tasks and Workloads [K]
+\item Task Mapping and Scheduling [K]
+\item Amdahl's Law [C]
+\end{list2}
+
+\subsection{Learning Outcomes}
+Having completed this module, students should be able to 
+\begin{list2}
+\item describe the differences between a homogeneous and heterogeneous computing system
+\item describe and distinguish between different forms of heterogeneity
+\item understand the motivation behind the design of heterogeneous computing systems
+\item recognize the importance of energy efficiency on current computing systems
+\item understand that tasks in a workload have different demands for compute and memory resources
+\item understand the notion of task mapping as performed by an operating system
+\item analyze the performance and energy effects of task mapping on a heterogeneous system
+\end{list2}
+
+\subsection{Pedagogical Notes}
+
+To be updated. 
+
+\subsection{Instructor Resources}
+The teaching material included with this module include the following
+\begin{list2}
+\item Lecture slides: includes notes on guiding class discussion
+\item In-class Demo: includes instructions for setting up a heterogeneous environment within a
+  homogeneous multicore system and step-by-step guidelines for running the demo in class 
+\item Lab : The module includes a lab that provides students hands-on experience in running
+  application on a heterogeneous system. The lab will also reinforce the performance and energy
+  implications covered in the lecture. The lab includes detailed instructions for the instructor in
+  setting up a heterogeneous system on which students will conduct performance experiments. The lab
+  requires the student to have some basic familiarity with a Linux environment.  
+\item Reference Material: further reading for instructors unfamiliar with topics covered in this
+  module 
+\item Pedagogical Notes: suggestions drawn from author's own experience in teaching this module 
+\end{list2}
+
+All material is available for download from https://github.com/TeachingUndergradsCHC/modules.git
+under folder moduleA. 
+
+\bibliography{edu}
+\bibliographystyle{unsrt}
+\end{document}       
