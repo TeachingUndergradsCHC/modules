@@ -58,22 +58,22 @@ chooses to do a more involved (e.g., in a CS2 course rather CS1)
 
 The main steps for the in-class demo are outlined below
 
-1. Discuss heterogeneous system
+####  Discuss heterogeneous system.
 
 Log into system that has been set up to simulate a heterogeneous system and review it's attributes. 
 
-        cat /proc/cpuinfo
-	cpufreq-info
+    cat /proc/cpuinfo
+    cpufreq-info
 	
-2. Review Code
+####  Review matrix-multiply code
 
-Pull up the matrix-vector source code in an editor and do a walk-through. 
+Pull up the matrix-vector source code in an editor and do a walk-through.
 
-    * discuss command-line arguments 
-    * discuss basics of an OpenMP directive
+  - discuss command-line arguments 
+  - discuss basics of an OpenMP directive
 
 
-Build the code on the command-line.
+#### Build the code on the command-line.
 
     g++ -o matvec -fopenmp -O3 matvec.c      
 
@@ -81,44 +81,43 @@ Run and time the code
 
     time ./matvec 10000 4
 
-
-3. Discuss mapping of threads to processors 
+#### Discuss mapping of threads to processors 
 
    Introduce the taskset utility and discuss how it can be used to map threads to processing cores.
 
-   taskset -c 0 ./matvec  // run program on core 0
-   taskset -c 0-3 ./matvec // run program on all cores (0 through 3)
+    taskset -c 0 ./matvec  // run program on core 0
+    taskset -c 0-3 ./matvec // run program on all cores (0 through 3)
 
-4. Run code on _little_ cores
+#### Run code on _little_ cores
 
    Run the code on the cores set up as little cores and measure execution time.
 
-   time taskset -c 0,1 ./matvec
+    time taskset -c 0,1 ./matvec
 
    Re-run the code and measure detailed performance metrics with perf
 
-   perf stat taskset -c 0,1 ./matvec
+    perf stat taskset -c 0,1 ./matvec
 
    Re-run the code and measure power and energy  
 
-   likwid-perctr -c 0,1 -g ENERGY taskset -c 0,1 ./matvec
+    likwid-perctr -c 0,1 -g ENERGY taskset -c 0,1 ./matvec
 
-5. Run code on _little_ cores
+#### Run code on _big_ cores
 
    Run the code on the cores set up as little cores and measure execution time.
 
-   time taskset -c 2,3 ./matvec 
+    time taskset -c 2,3 ./matvec 
 
    Re-run the code and measure power and energy  
 
-   likwid-perctr -c 0,1 -g ENERGY taskset -c 0,1 ./matvec
+    likwid-perctr -c 0,1 -g ENERGY taskset -c 0,1 ./matvec
 
 
-6. Discuss the implications of the results.
+#### Discuss the implications of the results
 
-    - little cores will consume less power than big cores
-    - little cores will have lower performance than big cores
-    - threads must be mapped to cores based on the characteristic of the application and the target
+   - little cores will consume less power than big cores
+   - little cores will have lower performance than big cores
+   - threads must be mapped to cores based on the characteristic of the application and the target
       objective
 
 
