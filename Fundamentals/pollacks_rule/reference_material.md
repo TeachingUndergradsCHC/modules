@@ -22,6 +22,7 @@ Intern. Symp. Microarchitecture (MICRO), 1999.
 [Slides](http://hpc.ac.upc.edu/Talks/dir07/T000065/slides.pdf)
 * S. Borkar, "Getting Gigascale Chips: Challenges and Opportunities in
 Continuing Moore's Law", ACM Queue, 1(7):26-33, October 2003.
+DOI: [10.1145/957717.957757](https://doi.org/10.1145/957717.957757)
 
 I am not aware of a discussion of it in a textbook, but would be
 interested in having one pointed out to me.
