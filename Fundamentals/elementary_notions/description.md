@@ -46,7 +46,7 @@ Having completed this module, students should be able to
 The teaching material included with this module include the following
 
   * [Slide Deck](./lecture_slides.pptx): includes instructor annotations
-  * [Reference Material](#references): additional resources for instructors
+  * [Reference Material](./reference_material.md): additional resources for instructors
   * Pedagogical Notes: suggestions drawn from author's own experience in teaching this module 
 
 All material available for download from the [ToUCH git
@@ -55,10 +55,10 @@ repository](https://github.com/TeachingUndergradsCHC/modules.git)
 
 ### References 
 
-* <a name="csinparallel"></a>CSinParallel Project. <http://csinparallel.org/>
-* <a name="cder"></a>Center for parallel and distributed computing curriculum development and
+1. <a name="csinparallel"></a>CSinParallel Project. <http://csinparallel.org/>
+1. <a name="cder"></a>Center for parallel and distributed computing curriculum development and
   educational resources 
   (CDER). <http://www.cs.gsu.edu/~tcpp>
-* <a name="tues"></a>Parallel Computing in the Undergraduate Curriculum : the Early-and-Often
+1. <a name="tues"></a>Parallel Computing in the Undergraduate Curriculum : the Early-and-Often
   Approach. <https://tues.cs.txstate.edu>
 
