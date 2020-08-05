@@ -48,6 +48,8 @@ Having completed this module, students should be able to:
   * [MIPS Cheatsheet](./MIPS/MIPS_cheatsheet.pdf): MIPS ISA cheatsheet	
   * [Code]():
   * [Exercises]()
+  * [Lab1](./ARM/lab1.md): Lab exploring codesize and speed tradeoffs
+    between ARM and Thumb
   * [Reference Material](./reference_material.md): additional resources for instructors
 
 
