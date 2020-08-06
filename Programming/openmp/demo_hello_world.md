@@ -1,32 +1,35 @@
-### [Demo] Hello World in OpenMP
-[D1] Heterogeneous Programming with OpenMP  
+### [Demo] Hello World in OpenMP 
+[D1] Heterogeneous Programming with OpenMP:
 Apan Qasem [\<apan@txstate.edu\>](apan@txstate.edu)
 
-#### Objective
+#### Overview
 
-An in-class interactive walk-through of the Hello World program parallelized using OpenMP. The
+An in-class interactive walk-through of the Hello World program, parallelized using OpenMP. The
 demo covers the following
 
-  * setting up the environment to build and run OpenMP application
-  * building OpenMP application with `gcc`
-  * `pragma omp parallel`
+  * setting up OpenMP environment in Linux 
+  * building OpenMP applications with `gcc` command-line
+  * OpenMP pragmas: `parallel` 
+  * OpenMP API: `omp_set_num_threads(), omp_get_num_threads(), omp_get_thread_num()`
 
-#### Transcript
+#### In-class Demo
 
-1. **Setting up the environment:** Mainstream compilers such as GCC and LLVM provide their own
-implementations of OpenMP. The OpenMP libraries and header files are packaged with the compilers. In
-general no software packages need to be installed to build and run OpenMP applications, as long as
-there is a recent compiler in your system.
+1. **Setting up the environment:** All mainstream compilers today provide integrated
+support for OpenMP. Each compiler has its own implementation of the OpenMP standard. The OpenMP
+libraries and header files are packaged and distributed with the compiler. So, no software packages
+need to be installed to build and run OpenMP applications as long as there is a more-or-less recent
+compiler installed on the system. 
 
-    You can check the version of your compiler in the following way 
-   
+    We can check the version of the compiler in our system as follows (ada is the name of the
+    machine where the commands in this demo were run)
+
 		(ada)% gcc --version
 	    gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
 	    Copyright (C) 2017 Free Software Foundation, Inc.
 	    This is free software; see the source for copying conditions.  There is NO
 	    warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
-		(ada)% clang --version
+        (ada)% clang --version
 		clang version 12.0.0 (https://github.com/llvm/llvm-project.git
 		041c7b84a4b925476d1e21ed302786033bb6035f) 
 		Target: x86_64-unknown-linux-gnu
@@ -42,33 +45,33 @@ there is a recent compiler in your system.
 		  return 0;
 		}
 
-    We will implement an OpenMP version of this program. The first step in writing an OpenMP program
-    is including the header file
+    We will implement an OpenMP version of this program. Generally, the first step in writing an OpenMP program
+    is including the header file (although in this trivial example we could have done without this)
 
         #include<omp.h>
 
-    On Linux systems, this file can be found in `/usr/include`. Since this is in the search
-    path for headers, there is no need to specify an included path in the compilation command. We can
-    compile and create an executable with the following command. 
+    On Linux systems, `omp.h` is located `/usr/include`. Since this is in the compiler's search
+    path for header files there is no need to specify an include path (with the `-I` flag) in the
+    compilation command. We can compile and create an executable with the following command. 
 
-        gcc -o hello -fopenmp hello.c
+        (ada)% gcc -o hello -fopenmp hello.c
 
-    The only difference from a regular build command is that the inclusion of the `-fopenmp`
-    flag. This flag tells `gcc` that we are building an OpenMP application. We can now execute this
-    program, just like a sequential program. 
+    The only difference from a regular build command is the inclusion of the `-fopenmp` flag. This
+    flag tells `gcc` that we are building an OpenMP application. We can now execute this 
+    program from the command-line just like a serial program. 
 
-        ./hello
+        (ada)% ./hello
 
-
-3.  **OpenMP pragmas:** OpenMP uses a pragma based syntax. All parallelization and associated directives
-    must specified via pragmas or pre-processing directives. All pragmas have the following format
+3.  **OpenMP pragmas:** OpenMP uses a pragma-based syntax. All parallelization and associated directives
+    must specified via pragmas. All pragmas have the following format
    
         #pragma omp <directive> [ options ]
      
     `#pragma` tells the compiler that this line is to be processed by a pre-processor (not the
     compiler itself). `omp` says that the directive is to be processed by OpenMP. `<directive>` specifies
-    the action to be taken on the code that follows immediately. The `<directive>` can be followed by some
-    optional arguments (more on this in the next demo). 
+    the action to be taken on the code that immediately follows the pragma. The `<directive>` can be
+    followed by a set of optional arguments. In OpenMP terminology, these arguments are called
+    *clauses* (more on this in the next demo). 
 
 
 4. **The `parallel` pragma:** One of the simplest pragmas in OpenMP is the `parallel` directive. It can
@@ -83,9 +86,12 @@ there is a recent compiler in your system.
 		  return 0;
 		}
 	
-	This directive will execute the `printf` statement in parallel. Essentially, OpenMP will create
-    _n_ threads where each thread will execute the `printf` statement. All _n_ threads will execute
-    in parallel. We can build and execute this code as before. *Can we predict the output?*
+	This directive will execute the `printf` statement in parallel. This means that OpenMP will create
+    _n_ threads where each thread will execute an instance of the `printf` statement. All _n_
+    threads will execute this statement in parallel. We can build and execute this code as
+    before.
+
+    _Can we predict the output?_
 	
 		(ada)%  gcc -o hello -fopenmp hello.c
 		(ada)% ./hello 
@@ -102,16 +108,20 @@ there is a recent compiler in your system.
 		Hello World
 		Hello World
 
-	*How many threads were created?* We can use the `wc` utility to count the number of lines of
-    output from any program. 
+	*How many threads were created?* 
+	
+	We can use the `wc` utility to count the number of lines of output from any program. 
 	
 	    (ada)% ./hello | wc -l 
 		12
 
-	OpenMP decided to create 12 threads in this case. *Can we guess why?*. If we do not tell OpenMP
-    how many threads to use, it will apply its own judgment to select the number of threads. In many
-    situations, the number of threads will correspond to the number of processing cores
-    available. We can check the number of cores available with `lscpu` command 
+	OpenMP decided to create 12 threads in this case. 
+	
+	_Can we guess why?_ 
+	
+	If we do not tell OpenMP how many threads to use, it will apply its own judgment to select the
+    number of threads. In many situations, the number of threads will correspond to the number of
+    processing cores  available. We can check the number of cores available on our with `lscpu` command 
 	
 		(ada)% lscpu
 		Architecture:        x86_64
@@ -143,7 +153,9 @@ there is a recent compiler in your system.
 		}
 	
 	The above prompts the compiler to throw the following error. The error message is somewhat
-    cryptic. *Can we figure out why the compiler is complaining?*
+    cryptic. 
+	
+	_Can we figure out why the compiler is complaining?_
 	
 		(ada)%  gcc -o hello -fopenmp hello.c
 		hello.c: In function ‘main’:
@@ -159,8 +171,9 @@ there is a recent compiler in your system.
 		^
 
 	Unlike C/C++, blocks in OpenMP _must_ start on a newline. Remember, OpenMP directives are being
-    processed by the pre-processor, not the compiler. Small sacrifice in style for some of you. We
-    can now add multiple statements inside the block to be parallelized by OpenMP
+    processed by the pre-processor, not the compiler. (Not being able to place the opening brace on
+    the same line is a small sacrifice in style for some of us). We can now add multiple statements
+    inside the block to be parallelized by OpenMP. 
 
 		int main() {
 		  #pragma omp parallel 
@@ -173,7 +186,7 @@ there is a recent compiler in your system.
 
 
 		(ada)%  gcc -o hello -fopenmp hello.c
-		(base) (ada)% ./hello 
+		(ada)% ./hello 
 		Hello World
 		Hello World
 		Hello World
@@ -190,15 +203,15 @@ there is a recent compiler in your system.
     from one run to the next. Of course, in real programs, we will want more control over the
     parallel execution. 
 
-5. **OpenMP API:* OpenMP provides an extensive API to get information from executing
+5. **OpenMP API:** OpenMP provides an extensive API to get information from executing
    threads and to configure the parallel execution environment. `omp_set_num_threads()` allows us to
    tell OpenMP how many threads it should in a parallel block of code. `omp_get_num_threads()` gives
    us the number of threads that OpenMP is actually using. This function must be called from inside
    a parallel region. If called from outside it returns 1. Each thread created by OpenMP has a
-   unique ID (this is different from the thread ID maintained by the OS). The thread can be
+   unique ID (this is different from the thread ID maintained by the OS). The thread ID can be
    retrieved at runtime with `omp_get_thread_num()`. 
    
-    We will now utilize these functions to better track the parallel execution of our Hello World
+    We will now utilize these functions to track the parallel execution of our Hello World
     program. 
 
 		#include<stdio.h>
@@ -215,6 +228,9 @@ there is a recent compiler in your system.
           return 0;
         }
 
+	This program limits the number of OpenMP threads to 4. The parallel segment then prints out the
+	ID of each thread created by OpenMP and the total number of threads. 
+	
 		(ada)% gcc -o hello -fopenmp hello.c
 		(ada)% ./hello 
 		Hello World from thread 0 of 4!
