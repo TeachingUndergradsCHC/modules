@@ -15,6 +15,9 @@ motivation behind their design.
 
 The modules are classified into five broads areas
 
+![alt text](overview/figs/modules.png "Module Classification")
+
+
 * [Fundamentals](./Fundamentals)
 * [Algorithms](./Algorithms)
 * [Architecture](./Architecture)
@@ -35,7 +38,9 @@ contribute a module, please contact Apan <apan@txstate.edu>
 * [Algorithms](./Algorithms)
      * [[B1] Hybrid Algorithms](./Algorithms/hybrid_algorithms)
 * [Architecture](./Architecture)
-* [Programming Models](./Programming)
+     * [[C1] Introduction to ARM](./Architecture/arm_introduction)
+     * [[C2] GPU Memory Hierarchy](./Architecture)/gpu_memory_hierarchy)
+* [Programming Models](./Programming) 
     * [[D1] Introduction to CUDA Programming](./Programming/cuda)
     * [[D2] Heterogeneous Programming with OpenMP](./Programming/openmp)
 * Performance
