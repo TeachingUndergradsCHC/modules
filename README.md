@@ -15,7 +15,7 @@ motivation behind their design.
 
 The modules are classified into five broads areas
 
-![alt text](https://github.com/TeachingUndergradsCHC/modulea/overview/figs/modules.png "Module Classification")
+![alt text](https://github.com/TeachingUndergradsCHC/modules/overview/figs/modules.png "Module Classification")
 
 
 * [Fundamentals](./Fundamentals)
