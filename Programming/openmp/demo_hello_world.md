@@ -1,5 +1,5 @@
 ### [Demo] Hello World in OpenMP 
-[D1] Heterogeneous Programming with OpenMP:
+[D1] Heterogeneous Programming with OpenMP:  
 Apan Qasem [\<apan@txstate.edu\>](apan@txstate.edu)
 
 #### Overview
