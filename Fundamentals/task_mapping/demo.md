@@ -90,7 +90,7 @@ Run and time the code
     taskset -c 0 ./matvec  // run program on core 0
     taskset -c 0-3 ./matvec // run program on all cores (0 through 3)
 
-**5.Run code on _little_ cores**
+**5. Run code on _little_ cores**
   
   Run the code on the cores set up as little cores and measure execution time.
 
@@ -104,7 +104,7 @@ Run and time the code
 
     likwid-perfctr -c 0,1 -g ENERGY taskset -c 0,1 ./matvec
 
-**6.Run code on _big_ cores**
+**6. Run code on _big_ cores**
 
    Run the code on the cores set up as little cores and measure execution time.
 
@@ -115,7 +115,7 @@ Run and time the code
     likwid-perfctr -c 0,1 -g ENERGY taskset -c 0,1 ./matvec
 
 
-**7. Discuss the implications of the results**
+**7. Discuss the implications of the results** 
 
    * little cores will consume less power than big cores
    * little cores will have lower performance than big cores
