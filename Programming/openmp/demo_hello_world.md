@@ -1,8 +1,8 @@
-### [Demo] Hello World in OpenMP 
-[D1] Heterogeneous Programming with OpenMP:  
+## [Demo] Hello World in OpenMP 
+[D1] Heterogeneous Programming with OpenMP  
 Apan Qasem [\<apan@txstate.edu\>](apan@txstate.edu)
 
-#### Overview
+### Description
 
 An in-class interactive walk-through of the Hello World program, parallelized using OpenMP. The
 demo covers the following
@@ -12,7 +12,7 @@ demo covers the following
   * OpenMP pragmas: `parallel` 
   * OpenMP API: `omp_set_num_threads(), omp_get_num_threads(), omp_get_thread_num()`
 
-#### In-class Demo
+### Instructions 
 
 1. **Setting up the environment:** All mainstream compilers today provide integrated
 support for OpenMP. Each compiler has its own implementation of the OpenMP standard. The OpenMP

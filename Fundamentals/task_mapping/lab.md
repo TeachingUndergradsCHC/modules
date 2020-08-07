@@ -1,28 +1,25 @@
-### [A2] Task Mapping on Soft Heterogeneous Systems 
+## [Lab] Multi-tasking Heterogeneous Computers 
+[A2] Task Mapping on Soft Heterogeneous Systems  
 Apan Qasem [\<apan@txstate.edu\>](apan@txstate.edu)
 
-#### Lab: Multi-tasking Heterogeneous Computers 
 
-##### Description
+### Description
 Heterogeneous computers are particularly good at performing a variety of tasks concurrently. But in
-order for them to do a good job, the software must ensure that tasks are appropriately distributed to the specialized
-cores.
+order for them to do a good job, the software must ensure that tasks are appropriately distributed
+to the specialized cores.
 
 In this assignment, you will investigate performance (and energy) issues of a heterogeneous
 computing system. You will be given a set of four programs with different characteristics. Your goal
 is to determine the best mapping of these programs to the different processing cores via
-experimentation and analysis.  
+experimentation and analysis.
 
 
-##### Environment
-
+### Environment
 You will be running experiments on `megatron`, a heterogeneous multicore
 system. megatron has four processing cores and each core has been configured to do a specific type
-of job. Although each core can do any type of computation it will perform certain tasks really
-well.
+of job. Although each core can do any type of computation it will perform certain tasks really well.
 
-##### Tools
-
+### Tools
 Familiarize yourself with the following tools. 
 
   * `perf`
@@ -31,9 +28,9 @@ Familiarize yourself with the following tools.
   * `cpufreutils`
   * `cpupower`
 
-##### Instructions
+### Instructions
 
-###### 1. Log in to megatron.
+**1. Log in to megatron.**
 
 megatron is a server behind the firewall. From within the Texas State network, you can ssh into
 megatron as follows
@@ -44,11 +41,11 @@ From an off-campus network, you will first need to ssh into a gateway server (e.
 zeus.cs.txstate.edu) and then ssh into megatron. 
 
 
-###### 2. Download code samples.
+**2. Download code samples.**
 
 After you logged into megatron, clone the following git repository into your home directory 
 
-     git clone https://git.txstate.edu/aq10/hetero/assg1.git`
+     git clone https://git.txstate.edu/aq10/hetero/assg1.git
 
 Create a directory for the codes to reside and unzip the codes into that directory. You should see
 four executables and a README. The four executables are designed to perform the following tasks
@@ -60,9 +57,10 @@ four executables and a README. The four executables are designed to perform the 
 
 The README has more information about each application and their characteristics. 
 
-###### 3. Conduct Performance Experiments
+**3. Conduct Performance Experiments**
 
-Launch the four programs, at the same time, with different thread mapping configurations. You can do this in one step using the mapper tool (installed in
+Launch the four programs, at the same time, with different thread mapping configurations. You can do
+this in one step using the mapper tool (installed in 
 `/usr/local/bin/mapper`). For example, 
 
      /usr/local/bin/mapper p0 p1 p3 p4 3 1 0 2
@@ -88,7 +86,7 @@ Repeat the experiments and measure the energy consumption. You can use likwid (l
 
      likwid-perctr -c 0-3 -g ENERGY /usr/local/bin/mapper p0 p1 p3 p4 3 1 0 2
 
-###### 4. Analyze the data
+**4. Analyze the data**
 
 Create charts showing performance (as measured using the metrics described above), power and energy
 for different configurations. Analyze the data and create a report answering the following questions
