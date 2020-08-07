@@ -4,7 +4,7 @@ Apan Qasem [\<apan@txstate.edu\>](mailto:apan@txstate.edu)
 #### <a href="references"></a>Reference Material
 
   * Introduction to Algorithms by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford
-    Stein. 3rd Edition, 2009. [ Chapter 27 ]
+    Stein. 3rd Edition, 2009. [Ch 27]
 
 #### Further Reading 
 
