@@ -44,3 +44,13 @@ contribute a module, please contact Apan <apan@txstate.edu>
      * [[D2] Heterogeneous Programming with OpenMP](./Programming/openmp)
 * Performance
     
+	
+### Publications	
+
+Apan Qasem. _A Gentle Introduction to Heterogeneous Computing for CS1 Students_ in 
+IEEE/ACM Workshop on Education for High-Performance Computing, (EduHPC@SC 2019), 2019.
+[doi:10.1109/EduHPC49559.2019.00007](https://ieeexplore.ieee.org/document/8943087)
+
+Apan Qasem, David Bunde and Phil Schielke. _ToUCH: Teaching Undergrads Collaborative and Heterogeneous
+Computing_ in Consortium for Computing Sciences in Colleges South Central Conference
+(CCSC19), 2019. 
