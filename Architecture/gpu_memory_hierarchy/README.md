@@ -51,6 +51,7 @@ This module includes the following teaching materials:
     An implementation that doesn't use tiling
   * [Skeleton of tiled matrix multiply](./incomplete_tiled_matrix_mult.cu): 
     A version partially converted to using tiling
+    (A completed version is available to instructors upon request.)
 
 All material available for download from the [ToUCH git repository](https://github.com/TeachingUndergradsCHC/modules.git)  
 
