@@ -31,6 +31,7 @@ hardware accelerator.
 
 1. Copy the following code into the first cell of the notebook and hit
 the "play button" next:
+<pre>
     !apt update -qq;
     !wget
     https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb;
@@ -41,6 +42,7 @@ the "play button" next:
     !ln -s /usr/bin/gcc-5 /usr/local/cuda/bin/gcc;
     !ln -s /usr/bin/g++-5 /usr/local/cuda/bin/g++;
     !apt install cuda-8.0;
+</pre>
 This step take several minutes since it involves installing the CUDA
 development tools into the notebook.
 It is the main drawback of using a Colab rather than a server, on
@@ -49,13 +51,17 @@ which access would be quick once the tools are installed once.
 1. Create another cell by clicking "+ Code" directly below the menu.
 Then copy the following code into the new cell and hit the play button
 to run it:
+<pre>
     !pip install git+git://github.com/andreinechaev/nvcc4jupyter.git
     %load_ext nvcc_plugin
+</pre>
 This installs a plugin that lets you enter CUDA code in the notebook.
 
 1. Finally the following:
+<pre>
     !sudo ln -s /usr/bin/gcc-5 /usr/local/cuda/bin/gcc
     !sudo ln -s /usr/bin/g++-5 /usr/local/cuda/bin/g++
+</pre>
 These make the system use version 5 of gcc and g++, which is the
 latest version that CUDA supports.
 
