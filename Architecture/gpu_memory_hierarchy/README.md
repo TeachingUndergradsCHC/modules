@@ -13,6 +13,8 @@ location by location, the tiled algorithm loads submatrices of the
 input into shared memory and computes part of the result for an entire
 submatrix of the result.
 
+The module is based on an example from a well-known text [[1]](#kirk10).
+
 ### Context
 
 The module is intended as second module on GPU programming after
@@ -24,6 +26,19 @@ Because of its prerequisites, this module is appropriate for a
 mid-level systems course or an upper-level elective.
 I plan on using it in an Introduction to Systems course in which both
 CUDA programming and caching are introduced.
+
+My students have found it easier to use 
+[Google Colab](https://colab.research.google.com) to run the code in
+this module than to use ssh to access departmental computing
+resources.
+Colab provides an interactive computing environment running
+[Jupyter](https://jupyter.org/) notebooks with access to GPUs.
+Using GPUs does require installing the nvcc compiler.
+As an added wrinkle, the GPU students run on changes (thus, changing
+its number of cores and architecture) when they restart
+the notebook, which can lead to different results.
+See the setup resource below for additional information on using
+Google Colab.
 
 ### Topics
 
@@ -50,10 +65,15 @@ This module includes the following teaching materials:
   * [(Untiled) CUDA code for matrix multiply](./matrix_multiply.cu):
     An implementation that doesn't use tiling
   * [Skeleton of tiled matrix multiply](./incomplete_tiled_matrix_mult.cu): 
-    A version partially converted to using tiling
+    A version partially converted to using tiling.
     (A completed version is available to instructors upon request.)
+  * [Information on using Google Colab](./colab.md)
 
 All material available for download from the [ToUCH git repository](https://github.com/TeachingUndergradsCHC/modules.git)  
 
+### References
+
+1. <a name="kirk10"></a>D.B. Kirk and W.-m.W. Hwu. Programming massively parallel
+processors.  Sections 4.4-4.6, pages 84-96, Morgan Kaufmann, 3rd edition, 2017.
 
 
