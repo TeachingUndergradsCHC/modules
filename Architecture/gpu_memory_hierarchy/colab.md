@@ -48,9 +48,9 @@ which access would be quick once the tools are installed once.
 1. Create another cell by clicking "+ Code" directly below the menu.
 Then copy the following code into the new cell and hit the play button
 to run it:
-
-        !pip install git+git://github.com/andreinechaev/nvcc4jupyter.git
-        %load_ext nvcc_plugin
+`!pip install git+git://github.com/andreinechaev/nvcc4jupyter.git`
+`%load_ext nvcc_plugin`<br>
+`more code`
 This installs a plugin that lets you enter CUDA code in the notebook.
 
 1. Finally, run the following in another cell (created with "+ Code"
