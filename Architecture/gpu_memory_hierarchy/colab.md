@@ -45,24 +45,24 @@ the "play button" next:
     It is the main drawback of using a Colab rather than a server, on
     which access would be quick once the tools are installed once.
 
-1. Create another cell by clicking "+ Code" directly below the menu.
-Then copy the following code into the new cell and hit the play button
-to run it:
-
-    `!pip install git+git://github.com/andreinechaev/nvcc4jupyter.git`<br>
+1. Create another cell by clicking "+ Code" directly below the
+    menu. Then copy the following code into the new cell and hit the play
+    button to run it:
+    <pre>
+    !pip install git+git://github.com/andreinechaev/nvcc4jupyter.git`<br>
     `%load_ext nvcc_plugin`
-
+    </pre>
     This installs a plugin that lets you enter CUDA code in the notebook.
 
 1. Finally, run the following in another cell (created with "+ Code"
-and run with the play button):
-
-`!sudo ln -s /usr/bin/gcc-5 /usr/local/cuda/bin/gcc`<br>
-`!sudo ln -s /usr/bin/g++-5 /usr/local/cuda/bin/g++`
-
-These make the system use version 5 of gcc and g++, which is the
-latest version that CUDA supports.
+    and run with the play button):
+    <pre>
+    !sudo ln -s /usr/bin/gcc-5 /usr/local/cuda/bin/gcc
+    !sudo ln -s /usr/bin/g++-5 /usr/local/cuda/bin/g++
+    </pre>
+    These make the system use version 5 of gcc and g++, which is the
+    latest version that CUDA supports.
 
 1. After this, you can enter the code to run in additional cells by
-preceding it with %%cu 
+    preceding it with %%cu 
 
