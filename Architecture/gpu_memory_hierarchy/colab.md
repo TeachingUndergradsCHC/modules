@@ -48,17 +48,18 @@ which access would be quick once the tools are installed once.
 1. Create another cell by clicking "+ Code" directly below the menu.
 Then copy the following code into the new cell and hit the play button
 to run it:
-`!pip install git+git://github.com/andreinechaev/nvcc4jupyter.git`
-`%load_ext nvcc_plugin`<br>
-`more code`
+
+`!pip install git+git://github.com/andreinechaev/nvcc4jupyter.git`<br>
+`%load_ext nvcc_plugin`
+
 This installs a plugin that lets you enter CUDA code in the notebook.
 
 1. Finally, run the following in another cell (created with "+ Code"
 and run with the play button):
-<pre>
-!sudo ln -s /usr/bin/gcc-5 /usr/local/cuda/bin/gcc
-!sudo ln -s /usr/bin/g++-5 /usr/local/cuda/bin/g++
-</pre>
+
+`!sudo ln -s /usr/bin/gcc-5 /usr/local/cuda/bin/gcc`<br>
+`!sudo ln -s /usr/bin/g++-5 /usr/local/cuda/bin/g++`
+
 These make the system use version 5 of gcc and g++, which is the
 latest version that CUDA supports.
 
