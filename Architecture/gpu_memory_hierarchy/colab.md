@@ -100,7 +100,7 @@ ram
     For example, the following is a "Hello World" program:
     <pre>
     %%cu
-    #include <stdio.h>
+    #include &lt;stdio.h>
     
     __global__ void hello() {
       int id = threadIdx.x + blockIdx.x * blockDim.x;
