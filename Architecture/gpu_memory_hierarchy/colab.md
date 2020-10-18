@@ -49,46 +49,14 @@ hardware accelerator.
     menu. Then copy the following code into the new cell and hit the play
     button to run it:
     <pre>
-    !%%cu
-    #include <stdio.h>
-
-    __global__ void hello() {
-      int id = threadIdx.x + blockIdx.x * blockDim.x;
-      printf("Hello from thread %d (%d of block %d)\n", id,
-      threadIdx.x,
-      blockIdx.x);
-    }
-
-    int main() {
-      hello<<<5,4>>>();  //launch 5 blocks of 4 threads each
-
-      cudaDeviceSynchronize();  //make sure kernel completes before
-    end of prog\
-ram
-    }pip install git+git://github.com/andreinechaev/nvcc4jupyter.git
+    !pip install git+git://github.com/andreinechaev/nvcc4jupyter.git
     %load_ext nvcc_plugin
     </pre>
     This installs a plugin that lets you enter CUDA code in the notebook.
 
 1. Finally, run the following in another cell (created with "+ Code"
     and run with the play button):
-%%cu
-    #include <stdio.h>
-
-    __global__ void hello() {
-      int id = threadIdx.x + blockIdx.x * blockDim.x;
-      printf("Hello from thread %d (%d of block %d)\n", id,
-      threadIdx.x,
-      blockIdx.x);
-    }
-
-    int main() {
-      hello<<<5,4>>>();  //launch 5 blocks of 4 threads each
-
-      cudaDeviceSynchronize();  //make sure kernel completes before
-    end of prog\
-ram
-    }    <pre>
+    <pre>
     !sudo ln -s /usr/bin/gcc-5 /usr/local/cuda/bin/gcc
     !sudo ln -s /usr/bin/g++-5 /usr/local/cuda/bin/g++
     </pre>
@@ -104,14 +72,12 @@ ram
     
     __global__ void hello() {
       int id = threadIdx.x + blockIdx.x * blockDim.x;
-      printf("Hello from thread %d (%d of block %d)\n", id, threadIdx.x,
-      blockIdx.x);
+      printf("Hello from thread %d (%d of block %d)\n", id, threadIdx.x, blockIdx.x);
     }
 
     int main() {
       hello<<<5,4>>>();  //launch 5 blocks of 4 threads each
     
-      cudaDeviceSynchronize();  //make sure kernel completes before end of program
+      cudaDeviceSynchronize();  //make sure kernel completes
     }
     </pre> 
-
