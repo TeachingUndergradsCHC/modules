@@ -51,7 +51,6 @@ to run it:
 
         !pip install git+git://github.com/andreinechaev/nvcc4jupyter.git
         %load_ext nvcc_plugin
-
 This installs a plugin that lets you enter CUDA code in the notebook.
 
 1. Finally, run the following in another cell (created with "+ Code"
