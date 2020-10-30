@@ -96,7 +96,7 @@ void check(cudaError_t retVal) {
   }
 }
 
-float runTest(float* M, float* N, float* P, float* Md, float* Nd, float* Pd, int size, int tile) {
+float runTest(float* M, float* N, float* P, float* Md, float* Nd, float* Pd, int size) {
 
   //allocate timers
   cudaEvent_t start;
