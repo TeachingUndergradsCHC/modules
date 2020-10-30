@@ -1,4 +1,6 @@
-
+	.global add_arrays_linear
+	.text
+	
 add_arrays_linear:
 	@ R0 contains the pointer to array x
 	@ R1 contains the pointer to array y
@@ -18,4 +20,4 @@ loop_head:
 	BAL loop_head
 loop_exit:
 	POP {R4-R6}       @ Restore content of these registers
-	POP {SP}          @ Return
+	POP {PC}          @ Return
