@@ -37,11 +37,12 @@ Having completed this module, students should be able to
 
  * identify dependencies in a hybrid-parallel computation DAG 
  * analyze complexity of hybrid parallel algorithms using recurrences
- * understand the use of the **target** directive to offload tasks to GPU in OpenMP
+ * understand the use of the **task** directive to offload tasks to GPU in OpenMP
 
 ### Instructor Resources 
 
   * [Slide Deck](./lecture_slides.pptx): with instructor annotations
+  * [Code]():
   * [Exercises](./exercises.md): in-class exercises, homework problems and exam questions (with solutions)
   * [Reference Material](./reference_material.md): additional resources for instructors
   * Pedagogical Notes: suggestions drawn from author's own experience in teaching this module 
