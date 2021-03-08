@@ -1,4 +1,4 @@
-### [B1] Hybrid Algorithms 
+### [B1] Hybrid Algorithms   
 Apan Qasem [\<apan@txstate.edu\>](mailto:apan@txstate.edu)
 
 #### Exercises 
@@ -16,23 +16,23 @@ Apan Qasem [\<apan@txstate.edu\>](mailto:apan@txstate.edu)
 
 2. **[ Complexity Analysis ]** Two parallel algorithms for matrix-vector multiplication are shown
    below. The first uses conventional threads for parallelization while the second exploits achieves
-   parallelization via target offloading. 
+   parallelization via target offloading. Analyze the complexity of the two algorithms. Show the derivation. 
+
    
-```C++
-   matvec(M, v, n, result)
-    parallel for i = 1 to n
-      for new j = 1 to n 
-        result[i] = result[i] + M[i][j] * v[y]
-```
+   ```C++
+     matvec(M, v, n, result)
+       parallel for i = 1 to n
+         for new j = 1 to n 
+           result[i] = result[i] + M[i][j] * v[y]
+   ```
 
-```C++
-   matvec(M, v, n, result)
-    target for i = 1 to n
-      for new j = 1 to n 
-        result[i] = result[i] + M[i][j] * v[y]
-```
+   ```C++
+     matvec(M, v, n, result)
+       target for i = 1 to n
+         for new j = 1 to n 
+           result[i] = result[i] + M[i][j] * v[y]
+   ```
 
-Analyze the complexity of the two algorithms. Show the derivation. 
   
 3. **[ Experimental Analysis ]** Download the two parallel implementations of the matrix-vector
    multiplication from the repository. Run a performance experiment to empirically validate their 
