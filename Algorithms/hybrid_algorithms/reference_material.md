@@ -6,6 +6,10 @@ Apan Qasem [\<apan@txstate.edu\>](mailto:apan@txstate.edu)
   * Introduction to Algorithms by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford
     Stein. 3rd Edition, 2009. [Ch 27]
 
+  * Apan Qasem, [**Setting up GPU offloading in OpenMP-GCC on
+    Ubuntu**](resources/gpu_offloading.md), ToUCH Tutorial, 2021.
+
+
 #### Further Reading 
 
   * López-Ortiz, A., Salinger, A., & Suderman, R., *Toward a Generic Hybrid CPU-GPU

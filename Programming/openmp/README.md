@@ -50,7 +50,8 @@ The teaching material included with this module include the following
   * Pedagogical Notes: suggestions drawn from author's own experience in teaching this module 
   * [Reference Material](./reference_material.md): additional resources for instructors
 
-All material available for download from the [ToUCH git repository](https://github.com/TeachingUndergradsCHC/modules.git)  
+All material available for download from the [ToUCH git
+repository](https://github.com/TeachingUndergradsCHC/modules.git)   
 
 
 ### References 
