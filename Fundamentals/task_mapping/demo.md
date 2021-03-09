@@ -40,7 +40,7 @@ in the common tools package
      sudo apt install linux-tools-4.15.0-47-generic
      
 
-**2. Lower Frequencies for a subset of cores**
+**2. Lower frequencies for a subset of cores**
 
 We simulate a less powerful (i.e., _little_) core by lowering its frequency to the lowest allowed
 value. In this example we select cores 0 and 1 to be the _little_ cores. To lower the frequencies for
@@ -55,6 +55,12 @@ cores 0 and 1
 The above will set up the multicore system with two _big_ cores (cores 2 and 3) and two _little_
 cores (cores 0 and 1). Other more complex configurations can be easily set up if the instructor
 chooses to do a more involved (e.g., in a CS2 course rather CS1)
+
+**3. Download example code from the ToUCH repo**
+
+An OpenMP parallel implementation of matrix-vector multiplication is used as a running example for
+this demo. The code is found here. 
+
 
 ### Instructions 
 
@@ -71,48 +77,68 @@ Log into system that has been set up to simulate a heterogeneous system and revi
 
 Pull up the matrix-vector source code in an editor and do a walk-through.
 
-  - discuss command-line arguments 
-  - discuss basics of an OpenMP directive
+  * discuss command-line arguments 
+  * discuss basics of an OpenMP directive
 
 
 **3. Build the code on the command-line**
 
-    g++ -o matvec -fopenmp -O3 matvec.c
+    gcc -o matvec -fopenmp -O3 matvec.c
 
-Run and time the code 
+   `matvec` is parallelized with OpenMP. So the `-fopenmp` flag is required. Compiling at `-O3` is
+   likely to give more predictable performance numbers. 
+   
+**4. Run and time the sequential and parallel version of the code**
 
-    time ./matvec 10000 4
+Run the code with a single thread (i.e., serial version). The matrix size and number of reps can be
+adjusted based on the system where the code is running and the amount of time to be devoted to this
+demo. With 10000 and 20 the sequential version should run for 3-4 seconds. 
+
+    time ./matvec 10000 20 1
+	
+
+Run the code with 2 threads and time the run. 
+
+    time ./matvec 10000 20 2
+
+Discuss the performance improvements with parallelization. Time permitting, the code can be run with
+2, 4, ... N threads (where N = number of processing cores on the system) to show the scalability of
+the code and discuss Amdahl's Law. 
 
 **4. Discuss mapping of threads to processors**
 
-   Introduce the taskset utility and discuss how it can be used to map threads to processing cores.
+   Introduce the `taskset` utility and discuss how it can be used to map threads to processing cores.
 
-    taskset -c 0 ./matvec  // run program on core 0
-    taskset -c 0-3 ./matvec // run program on all cores (0 through 3)
+	## run program on core 0 with 4 threads 
+    taskset -c 0 ./matvec 10000 20 4
+	## run program on 2 cores (2 and 5) with 4 threads 
+    taskset -c 2,5 ./matvec 10000 20 4
+
+Discuss software and hardware threads and impact on performance. 
 
 **5. Run code on _little_ cores**
   
-  Run the code on the cores set up as little cores and measure execution time.
+  Run the code on the cores set up as little cores and measure execution time. 
 
-    time taskset -c 0,1 ./matvec
+    taskset -c 0-3 ./matvec 10000 20 4
 
   Re-run the code and measure detailed performance metrics with perf
 
-    perf stat taskset -c 0,1 ./matvec
+    perf stat taskset -c 0-3 ./matvec 10000 20 4
 
   Re-run the code and measure power and energy
 
-    likwid-perfctr -c 0,1 -g ENERGY taskset -c 0,1 ./matvec
+    likwid-perfctr -c 0-3 -g ENERGY taskset -c 0-3 ./matvec 10000 20 4
 
 **6. Run code on _big_ cores**
 
    Run the code on the cores set up as little cores and measure execution time.
 
-    time taskset -c 2,3 ./matvec 
+    time taskset -c 4-7 ./matvec 10000 20 4
 
    Re-run the code and measure power and energy
 
-    likwid-perfctr -c 0,1 -g ENERGY taskset -c 0,1 ./matvec
+    likwid-perfctr -c 4-7 -g ENERGY taskset -c 4-7 ./matvec 10000 20 4
 
 
 **7. Discuss the implications of the results** 
