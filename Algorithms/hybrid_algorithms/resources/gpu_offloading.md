@@ -59,8 +59,7 @@ The upgrade does not need to clobber the default GCC or older versions of GCC. T
 simultaneously and cab be used to select one of the alternatives at any time. 
 
 ```bash
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++
-/usr/bin/g++-8
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /usr/bin/g++ g++ /usr/bin/g++-8
 ```
 
 ### <a name="openmp"></a>OpenMP
