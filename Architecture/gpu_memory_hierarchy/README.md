@@ -46,8 +46,9 @@ Google Colab.
 HC topics covered in this module are listed below. Bloom's
 classification is shown in brackets 
 
-  * GPU Acceleration [K]
-  * Memory heterogeneity [K]
+  * GPU Acceleration [A]
+  * Memory heterogeneity [A]
+  * Opimizing memory performance [C]
 
 ### Learning Outcomes
 
