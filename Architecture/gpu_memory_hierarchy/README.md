@@ -20,6 +20,7 @@ The module is based on an example from a well-known text [[1]](#kirk10).
 The module is intended as second module on GPU programming after
 students have been introduced to GPU programming and its SIMD
 programming model.
+(It could be a successor to our [Introduction to CUDA Programming module](../../Programming/cuda).)
 The idea is to make an analogy to CPU caching and reinforce the idea
 of caching; GPU shared memory is used as a programmer-controlled cache.
 Because of its prerequisites, this module is appropriate for a
@@ -45,8 +46,9 @@ Google Colab.
 HC topics covered in this module are listed below. Bloom's
 classification is shown in brackets 
 
-  * GPU Acceleration [K]
-  * Memory heterogeneity [K]
+  * GPU Acceleration [A]
+  * Memory heterogeneity [A]
+  * Opimizing memory performance [C]
 
 ### Learning Outcomes
 
