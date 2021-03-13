@@ -31,13 +31,14 @@ Familiarize yourself with the following tools.
 
 #### 1. Download the lab 
 
-Download the lab2.zip file and unzip it:
+Download the lab2.gz file and unzip it:
 
 ```
-unzip lab2.zip
+gunzip lab2.zip
 ```
 	
-This zipfile includes several C files, `sieve.c`, `sieve-main.c`, `mult.c`, mult-main.c`, and a `makefile`
+This zipfile includes several C files, `sieve.c`, `sieve-main.c`, `mult.c`, `mult-main.c`.  Additionally there is a `makefile`
+and an additional piece of assembly code, `thumb1-hack` to enale thumb1 code to build on your Raspberry Pi.
 	
 #### 2. Run the makefile
 
