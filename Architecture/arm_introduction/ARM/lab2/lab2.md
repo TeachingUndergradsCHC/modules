@@ -7,8 +7,9 @@ processing element code will run.  One of those decisions requires an understand
 ARM and Thumb mode.  In this lab students will build and run code
 targeting different sub-architectures: ARM, Thumb 1, and Thumb 2.
 
-You will be given several small pieces of code and a makefile to build
-them.  You will use some simple command line tools to try to
+There are two simple pieces of benchmark code, one that performs the Sieve of
+Eratosthenese algorihm and another that performs matrix multiply.  You will use some
+simple command line tools to try to
 understand  the codesize vs speed tradeoffs between the various
 ARM sub-ISA's
 
@@ -31,9 +32,9 @@ Familiarize yourself with the following tools.
 #### 1. Download the lab 
 
 Download the lab2.zip file and unzip it:
-	unzip lab1.zip
-This includes several C files, sieve.c, sieve-main.c, mult.c, and
-	mult-main.c, and a makefile
+	`unzip lab2.zip`
+This includes several C files, `sieve.c`, `sieve-main.c`, `mult.c`, and
+	`mult-main.c`, and a `makefile`
 	
 #### 2. Run the makefile
 
@@ -44,8 +45,8 @@ where you unzipped the files and type `make`.
 
 Each of the two sample benchmarks are compiled in three different
 ways:  ARM mode, Thumb1 mode, and Thumb2 mode.  A total of six
-executables are built: mult-arm, mult-thumb1, mult-thumb2, sieve-arm,
-sieve-thumb1, and sieve-thumb2.  You should run each of them.  Each executable
+executables are built: `mult-arm`, `mult-thumb1`, `mult-thumb2`, `sieve-arm`,
+`sieve-thumb1`, and `sieve-thumb2`.  You should run each of them.  Each executable
 will print out a series of numbers indicating the wall-clock time
 for running the benchmark.  You should record these values and take an average.
 
@@ -54,12 +55,12 @@ for running the benchmark.  You should record these values and take an average.
 We want to measure only the codesize of the code we are benchmarking,
 not the test test harness code.  Try the following command:
 `elfread -a sieve-arm.o`
-Can you find the codesize in the output of the function sievemark?
+Can you find the codesize in the output for the function `sievemark()`?
 
 An easier way to get the size of the executable file is:
 `size sieve-arm.o`
-Now the codesize should be very obvious. Since this object file contains
-only one function, that is the codesize (in bytes) of that function
+Now the code size should be very obvious. Since this object file contains
+only one function, the reported code size is the code size (in bytes) of that function.
 Find the codesize for each
 of the six benchmarks by running the `size` command on sieve-arm.o,
 sieve-thumb1.o, sieve-thumb2.o, mult-arm.o, mult-thumb1.o, and
