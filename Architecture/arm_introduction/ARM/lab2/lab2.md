@@ -32,9 +32,12 @@ Familiarize yourself with the following tools.
 #### 1. Download the lab 
 
 Download the lab2.zip file and unzip it:
-	`unzip lab2.zip`
-This includes several C files, `sieve.c`, `sieve-main.c`, `mult.c`, and
-	`mult-main.c`, and a `makefile`
+
+```
+unzip lab2.zip
+```
+	
+This zipfile includes several C files, `sieve.c`, `sieve-main.c`, `mult.c`, mult-main.c`, and a `makefile`
 	
 #### 2. Run the makefile
 
@@ -54,7 +57,10 @@ for running the benchmark.  You should record these values and take an average.
 
 We want to measure only the codesize of the code we are benchmarking,
 not the test test harness code.  Try the following command:
-`elfread -a sieve-arm.o`
+
+```
+elfread -a sieve-arm.o
+```
 Can you find the codesize in the output for the function `sievemark()`?
 
 An easier way to get the size of the executable file is:
