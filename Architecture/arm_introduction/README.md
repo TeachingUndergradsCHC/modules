@@ -46,9 +46,9 @@ Having completed this module, students should be able to:
   * [Slide Deck](./ARM/NEON_intro.pptx): Introduction to ARM's NEON SIMD coprocessor
   * [Instructor Notes](./ARM/ARM_intro_lecture_notes.pptx):  Instructor
     notes for above slide decks.
-  * [Lab]:(./ARM/lab1/lab1.md): A lab designed to introduce students to the ARM ISA
-  * [Lab]:(./ARM/lab2/lab2.md): A lab where students can experiment with the tradeoffs between ARM, Thumb1, and Thumb2 code
-  * [Lab]:(./ARM/lab3/lab3.md): A lab in which students rewrite some assembly code to utilize ARM NEON instructions.
+  * [Lab](./ARM/lab1/lab1.md): A lab designed to introduce students to the ARM ISA
+  * [Lab](./ARM/lab2/lab2.md): A lab where students can experiment with the tradeoffs between ARM, Thumb1, and Thumb2 code
+  * [Lab](./ARM/lab3/lab3.md): A lab in which students rewrite some assembly code to utilize ARM NEON instructions.
   * [ARM Cheatsheet](./ARM/ARM_cheatsheet.pdf):  ARM ISA cheatsheet
   * [MIPS Cheatsheet](./MIPS/MIPS_cheatsheet.pdf): MIPS ISA cheatsheet	
   * [Reference Material](./reference_material.md): additional resources for instructors
