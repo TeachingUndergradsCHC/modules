@@ -74,6 +74,12 @@ The teaching material included with this module are the following:
   * CUDA programs discussed during lecture:
     [hello.cu](./hello.cu), [addVectors.cu](./addVectors.cu)
   * [Information on using Google Colab](../../Architecture/gpu_memory_hierarchy/colab.md)
+  * Files for lab:
+    * [ppmFile.h](./ppmFile.h), [ppmFile.c](./ppmFile.c): library
+    files for dealing with ppm files
+    * [640x426.ppm](./640x426.ppm): sample image file (can also use your own)
+    * [main.cu](./main.cu): code that calls kernel
+    * [noRed.cu](./noRed.cu): kernel that removes red from the image
 
 All material available for download from the [ToUCH git repository](https://github.com/TeachingUndergradsCHC/modules.git)  
 
