@@ -33,7 +33,6 @@ int main() {
 	printf("%d ", res[i][j]);
       printf("\n");
     }
-    printf("\nTime taken: %ld\n",CPU_time_2 - CPU_time_1);
 #endif
   return 0;
 }
