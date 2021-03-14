@@ -75,6 +75,7 @@ The teaching material included with this module are the following:
     [hello.cu](./hello.cu), [addVectors.cu](./addVectors.cu)
   * [Information on using Google Colab](../../Architecture/gpu_memory_hierarchy/colab.md)
   * Files for lab:
+    * Lab handout: [.pdf](./lab.pdf)
     * [ppmFile.h](./ppmFile.h), [ppmFile.c](./ppmFile.c): library
     files for dealing with ppm files
     * [640x426.ppm](./640x426.ppm): sample image file (can also use your own)
