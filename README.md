@@ -41,7 +41,7 @@ contribute a module, please contact Apan <apan@txstate.edu>
      * [[C1] Introduction to ARM](./Architecture/arm_introduction)
      * [[C2] GPU Memory Hierarchy](./Architecture/gpu_memory_hierarchy)
 * [Programming Models](./Programming) 
-     * [[D1] Introduction to CUDA Programming](./Programming/cude)
+     * [[D1] Introduction to CUDA Programming](./Programming/cuda)
      * [[D2] Heterogeneous Programming with OpenMP](./Programming/openmp)
 
 * Performance
