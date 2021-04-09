@@ -66,6 +66,7 @@ This module includes the following teaching materials:
   * Slides ([.pptx](./lecture_slides.pptx), [.pdf](./lecture_slides.pdf))
   * [(Untiled) CUDA code for matrix multiply](./matrix_multiply.cu):
     An implementation that doesn't use tiling
+  * [Colab notebook](./cudaMem.ipynb) (open it and then click "open in colab")
   * [Skeleton of tiled matrix multiply](./incomplete_tiled_matrix_mult.cu): 
     A version partially converted to using tiling.
     (A completed version is available to instructors upon request.)
