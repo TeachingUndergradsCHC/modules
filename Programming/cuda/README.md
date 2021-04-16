@@ -75,7 +75,9 @@ The teaching material included with this module are the following:
     ([.pptx](./lecture_slides.pptx), [.pdf](./lecture_slides.pdf))
   * CUDA programs discussed during lecture:
     [hello.cu](./hello.cu), [addVectors.cu](./addVectors.cu)
-  * [Information on using Google Colab](../../Architecture/gpu_memory_hierarchy/colab.md)
+  * [Information on using Google Colab](../../Architecture/gpu_memory_hierarchy/colab.md) 
+    (The instructions are largely duplicated in the Colab notebook
+     below.)
   * Files for lab:
     * [Colab notebook](./cudaBlur.ipynb)  (open it and then click
     "open in colab")
