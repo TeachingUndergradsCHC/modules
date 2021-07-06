@@ -2,18 +2,17 @@
 Apan Qasem [\<apan@txstate.edu\>](apan@txstate.edu)
    
 ### Description 
-This module looks at algorithmic design patterns of hybrid applciations. 
+This module looks at algorithmic design patterns in hybrid applications. The patterns
+examined in this model include 
 
-### Context
+  * Reduction
+  * Scan 
+  * Histogramming 
+  * Stencil
+  
 
-### Topics 
-
-
-### Learning Outcomes
-
-
-### Instructor Resources 
-
+_This ToUCH module has been replaced by modules in the Accelerated Computing Teaching Kit from NVIDIA
+[Deep Learning Institute](https://www.nvidia.com/en-us/training/)._ 
 
 
 
