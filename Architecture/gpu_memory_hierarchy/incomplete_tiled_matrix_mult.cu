@@ -44,7 +44,7 @@ __global__ void tiledkernel(float* Md, float* Nd, float* Pd, int width) {
   for (int m=0; m < num_tiles; m++) {  //loop over tiles in row and column containing element
 
     //load Mds and Nds; this thread loads value at its postion; other threads in block load other values
-    //load 0s for values outside the matrix (tiles can be partiall in and partially out of matrix)
+    //load 0s for values outside the matrix (tiles can be partially in and partially out of matrix)
     if (m*TILE_WIDTH + tx < width && row < width)
       Mds[ty][tx] = Md[row*width + (m*TILE_WIDTH + tx)];
     else

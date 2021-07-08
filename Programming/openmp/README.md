@@ -1,4 +1,4 @@
-## [D1] Heterogeneous Programming with OpenMP
+## [D2] Heterogeneous Programming with OpenMP
 Apan Qasem [\<apan@txstate.edu\>](apan@txstate.edu)
 
 
@@ -47,6 +47,7 @@ The teaching material included with this module include the following
   * [Slide Deck](./lecture_slides.pptx): includes instructor annotations
   * [In-class Demo]:  
        * [Hello World in OpenMP](./demo_hello_world.md)
+       * [OpenMP Performance Scalability](./demo_scalability.md)
   * Pedagogical Notes: suggestions drawn from author's own experience in teaching this module 
   * [Reference Material](./reference_material.md): additional resources for instructors
 

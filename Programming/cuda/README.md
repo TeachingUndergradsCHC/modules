@@ -1,4 +1,6 @@
 ## [D1] Introduction to CUDA Programming
+
+Kartikay Bhuchar, Amar Puri, Abhishek Thapa, and
 David Bunde [\<dbunde@knox.edu\>](mailto:dbunde@knox.edu)
 
 ### Description
@@ -73,13 +75,19 @@ The teaching material included with this module are the following:
     ([.pptx](./lecture_slides.pptx), [.pdf](./lecture_slides.pdf))
   * CUDA programs discussed during lecture:
     [hello.cu](./hello.cu), [addVectors.cu](./addVectors.cu)
-  * [Information on using Google Colab](../../Architecture/gpu_memory_hierarchy/colab.md)
+  * [Information on using Google Colab](../../Architecture/gpu_memory_hierarchy/colab.md) 
+    (The instructions are largely duplicated in the Colab notebook
+     below.)
   * Files for lab:
+    * [Colab notebook](./cudaBlur.ipynb)  (open it and then click
+    "open in colab")
+    * Lab handout: [.pdf](./lab.pdf) or [.tex](./lab.tex)
     * [ppmFile.h](./ppmFile.h), [ppmFile.c](./ppmFile.c): library
     files for dealing with ppm files
     * [640x426.ppm](./640x426.ppm): sample image file (can also use your own)
-    * [main.cu](./main.cu): code that calls kernel
-    * [noRed.cu](./noRed.cu): kernel that removes red from the image
+    * [noRed.cu](./noRed.cu): kernel that removes red from the image;
+    this file is included in the Colab notebook so you don't need this
+    file unless you are running the lab outside the notebook
 
 All material available for download from the [ToUCH git repository](https://github.com/TeachingUndergradsCHC/modules.git)  
 
