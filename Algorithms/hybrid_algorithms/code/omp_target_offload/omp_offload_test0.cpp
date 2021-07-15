@@ -11,7 +11,7 @@ int main(){
 
   #pragma omp target 
   for(unsigned i = 0;i < N; i++)
-    a[i] *= 3 * i + 1;
+    a[i] *= 3 * i + 17.3;
 
   for(unsigned i = 0; i < 1; i++)
     cout << "Result a[0] = " << a[i] << endl;
