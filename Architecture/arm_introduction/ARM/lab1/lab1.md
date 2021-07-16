@@ -1,4 +1,4 @@
-## Lab: ARM vs. Thumb speed/codesize tradeoffs
+## Lab: Introduction to ARM assembly
 
 ### Description
 In this lab you will complete a simple ARM program, compile it using
