@@ -55,3 +55,28 @@ results, `n!` in register R2.
 The last several instructions given to you in main() will print the value
 of R2 to the terminal, and properly exit the function.
 
+#### 3. Build and run your code using gcc
+
+This lab utilizes the gnu toolchain to build your executable.  The code has
+been set up so that you only need one command to assemble and link your program:
+
+```
+gcc lab1.s
+```
+
+This will produce an executable named `a.out`.  To run, simply type:
+
+```
+./a.out
+```
+
+A sample run is shown below:
+
+```
+> gcc lab1.s
+> ./a.out
+Enter n: 5
+factorial is: 120
+```
+
+
