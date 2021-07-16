@@ -1,4 +1,4 @@
-## [D1] Heterogeneous Programming with OpenMP
+## [D2] Heterogeneous Programming with OpenMP
 Apan Qasem [\<apan@txstate.edu\>](apan@txstate.edu)
 
 
@@ -47,7 +47,13 @@ The teaching material included with this module include the following
   * [Slide Deck](./lecture_slides.pptx): includes instructor annotations
   * [In-class Demo]:  
        * [Hello World in OpenMP](./demo_hello_world.md)
-  * Pedagogical Notes: suggestions drawn from author's own experience in teaching this module 
+       * [OpenMP Performance Scalability](./demo_scalability.md)
+  * [Tutorials]:
+       * [OpenMP Device Check](./device_check.md)
+	   * [Selecting a GPU Device](./device_select.md)
+	   * [GPU Offloading with OpenMP](./offload_hello_world.md)
+       * [Moving Data Between Host and Device](./data_mapping.md)
+* Pedagogical Notes: suggestions drawn from author's own experience in teaching this module 
   * [Reference Material](./reference_material.md): additional resources for instructors
 
 All material available for download from the [ToUCH git

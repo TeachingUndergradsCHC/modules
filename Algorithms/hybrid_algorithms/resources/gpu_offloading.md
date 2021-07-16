@@ -9,7 +9,7 @@ on to NVIDIA GPUs with OpenMP and GCC. The instructions are for Ubuntu.
 The target construct, which allows structured code blocks to be offloaded to accelerators, was first
 introduced in OpenMP 4.0 with significant improvements in OpenMP 4.5 and OpenMP 5.0. GCC has supported
 OpenMP's target offload feature since version 7 (7.2.0, I think). GCC supports offloading
-including to Intel MIC, and NVIDIA and AMD GCN. This tutorial focuses on offloading to NVIDIA GPUs
+including to Intel MIC, NVIDIA and AMD GPUs. This tutorial focuses on offloading to NVIDIA GPUs
 only. 
 
 ### Outline 
@@ -23,7 +23,7 @@ only.
 
 ### <a name="sys"></a>Pre-requisites
 
- * **Ubuntu 18.04 LTS:** Ubuntu 16.04 and Ubuntu-based distributions like Kubuntu, Linux Mint and
+ * **Ubuntu 18.04 LTS:** Ubuntu 18.04 and Ubuntu-based distributions like Kubuntu, Linux Mint and
    Elementary OS should work. But not tested. 
  * **NVIDIA GPU with CUDA support:** Tested with Kepler, Maxwell, Pascal, Volta. Older or
    newer systems may not work. 
@@ -89,7 +89,7 @@ g++ -o omp_version omp_version.cpp -fopenmp
 We have OpenMP 4.5.
 ```
 
-Getting the latest OpenMP version is best because that provides all the features. However, that
+Getting the latest OpenMP version is best because it provides _all_ the features. However, that
 installation is problematic. 
 
 ### <a name="cuda"></a>CUDA
