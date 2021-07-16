@@ -7,6 +7,9 @@ Apan Qasem [\<apan@txstate.edu\>](apan@txstate.edu)
 * [OpenMP](http://www.openmp.org/): source for the most current OpenMP specifications and other
   supporting resources
 
+* [Tim Mattson's OpenMP Course](https://youtube.com/playlist?list=PLLX-Q6B8xqZ8n8bwjGdzBJ25X2utwnoEG): A hands-on
+  introduction to OpenMP; included lecture videos, slides and exercises. 
+  
 * [OpenMP Tutorial](https://hpc.llnl.gov/tuts/openMP): introductory tutorial by Blaise
   Barney at Lawrence Livermore National Lab (LLNL). Most recent features not covered. 
 
