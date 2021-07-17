@@ -38,12 +38,11 @@ In the editor of your choice, open up the file add_arrays_neon.s.  (You may
 also want to consult the completed linear version of the code in
 add_arrays_linear.s.)  The loop has been set up for you, and the addresses
 of the three arrays are in registers R0, R1, and R2.  R3 contains the size
-of the three arrays.  For this attempt you try loading array values into
-the Neon 64-bit registers (d0, d1, etc.)  Then you will need to use an addition
+of the three arrays.  For this attempt, load array values into
+the Neon 64-bit registers (d0, d1, etc.)  Then use an addition
 instruction that treats the 64-bit registers as (eight) separate 8-bit values,
-adding the 8-bit values together independently.  You will need to use Neon load and and store instructions. Consult the lecture slides for details on the 
-instructions.
-
+adding the 8-bit values together independently.  You will need to use Neon load, add, and store instructions.
+Consult the lecture slides for details on the instructions.
 
 #### 3. Build the code.
 
@@ -59,3 +58,20 @@ functions.  After each timing, several elements from the result array will
 be displayed a sort of check
 
 #### 4. Improve 
+
+In step three your NEON code added eight vector elements per instruction using
+the 64-bit NEON registers.  NEON also allows you to pair two 64-bit registers
+effectively creating a 128-bit registers.  SIMD instructions can be performed
+on these register pairs, so in our code example we can perform 16 8-bit addition
+operations using a single instruction.
+
+Take your code from step three and modify it to use the 128-bit register pairs.
+(We suggest you copy your add_arrays_neon.s to a backup file.)
+Then build and run the code as you did above.
+
+#### 5. Analysis
+
+* You compiled and ran four different versions of vector addition, linear C, linear ASM, 64-bit NEON asm, and 128-bit NEON asm.  What improvements in performance did you see between these 4 versions?
+* Why did the linear assembly code run so much faster than the compiled linear C code?
+* Why did you not observe a factor of 8 speedup moving from the linear assembly code to the 64-bit NEON code?
+* Why was the 128-bit NEON code not twice as fast at the 64-bit NEON code?
