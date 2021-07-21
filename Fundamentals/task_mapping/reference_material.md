@@ -12,7 +12,8 @@ performance and programmability issues thereof.
   Morgan Kaufmann, Third Edition, 2017, Morgan Kaufman / NVIDIA. (e-book available for free to qualified
   educators with [NVIDIA DLI](https://www.nvidia.com/en-us/training/) Teaching Kits)
 
-* Mohamed Zahran. Heterogeneous computing: Hardware and Software Perspectives, ACM Books, 2019.
+* Mohamed Zahran. Heterogeneous computing: Hardware and Software Perspectives, ACM Books, 2019
+  (included [ACM DL](https://dl.acm.org/doi/book/10.1145/3281649) subscription).
 
 
 A paper describing the implementation of this module at Texas State University
