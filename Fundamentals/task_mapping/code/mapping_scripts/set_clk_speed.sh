@@ -41,11 +41,13 @@ if [ $DEBUG ]; then
 fi
 
 # check frequency limits of CPU
-lb=`cpufreq-info -c ${cpu} | grep limits | awk '{print $3 * 1000000}'`
-ub=`cpufreq-info -c ${cpu} | grep limits | awk '{print $6 * 1000000}'`
+lb=`cpufreq-info -c ${cpu} | grep limits | awk '{mult = ($4=="MHz") ? 1000 : 1000000; print $3 * mult}'`
+ub=`cpufreq-info -c ${cpu} | grep limits | awk '{mult = ($7=="MHz") ? 1000 : 1000000; print $6 * mult}'`
 
 if [ $freq -lt $lb ] || [ $freq -gt $ub ]; then
 		echo "Illegal frequecy setting " ${user_freq} ". Not supported by hardware"
+		echo "Lower bound ${lb}"
+		echo "Upper bound ${ub}"
 		exit 0
 fi
 

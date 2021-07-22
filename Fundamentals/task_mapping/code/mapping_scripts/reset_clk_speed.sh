@@ -38,9 +38,8 @@ if [ $DEBUG ]; then
 fi
 
 # get limits 
-lb=`cpufreq-info -c ${cpu} | grep limits | awk '{print $3 * 1000000}'`
-ub=`cpufreq-info -c ${cpu} | grep limits | awk '{print $6 * 1000000}'`
-
+lb=`cpufreq-info -c ${cpu} | grep limits | awk '{mult = ($4=="MHz") ? 1000 : 1000000; print $3 * mult}'`
+ub=`cpufreq-info -c ${cpu} | grep limits | awk '{mult = ($7=="MHz") ? 1000 : 1000000; print $6 * mult}'`
 
 # restore defaults 
 cpupower -c $cpu frequency-set -d $lb &> /dev/null
