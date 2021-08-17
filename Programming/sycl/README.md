@@ -1,4 +1,4 @@
-## [D1] Introduction to SYCL Programming
+## [D3] Introduction to SYCL Programming
 
 Kartikay Bhuchar, Amar Puri, Abhishek Thapa, Benson Muite and
 David Bunde [\<dbunde@knox.edu\>](mailto:dbunde@knox.edu)
