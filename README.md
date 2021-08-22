@@ -43,6 +43,7 @@ contribute a module, please contact Apan <apan@txstate.edu>
 * [Programming Models](./Programming) 
      * [[D1] Introduction to CUDA Programming](./Programming/cuda)
      * [[D2] Heterogeneous Programming with OpenMP](./Programming/openmp)
+     * [[D3] Introduction to SYCL Programming](./Programming/sycl)
 
 * Performance
     
