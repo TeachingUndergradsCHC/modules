@@ -13,15 +13,16 @@ loop_head:
 	CMP R4, R3
 	BGE loop_exit
 loop_body:
-	@  Load 8 elements of array x into 64 bit register
+	@  Load 16 elements of array x into two 64 bit registers
 	VLD1.8 {d0,d1}, [R0]!
-	@  Load 8 elements of array y into 64 bit register
+	@  Load 16 elements of array y into two 64 bit registers
 	VLD1.8 {d2,d3}, [R1]!	
-	@  Perform an 8x8 SIMD add on these two registers
+	@  Perform 16 SIMD adds on these two registers
 	VADD.U8 q2, q0, q1
 	@  Store the result into array z
 	VST1.8 {d4,d5}, [R2]!
-	
+
+	@increment the loop index variable by 16.
 	ADD R4, R4, #16
 	BAL loop_head
 loop_exit:

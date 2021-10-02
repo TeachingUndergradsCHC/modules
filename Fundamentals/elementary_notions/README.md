@@ -46,6 +46,7 @@ Having completed this module, students should be able to
 The teaching material included with this module include the following
 
   * [Slide Deck](./lecture_slides.pptx): includes instructor annotations
+  * [Demo](./amdahls_law.ipynb): illustration of Amdahl's Law
   * [Reference Material](./reference_material.md): additional resources for instructors
   * Pedagogical Notes: suggestions drawn from author's own experience in teaching this module 
 

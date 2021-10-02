@@ -75,6 +75,48 @@ mult-thumb2.o
 
 #### 5. Examine the assembly files
 
+Let's examine the assembly code generated for the three different versions.  To do this
+we will use the debugger to disassble the generated object code.  To this
+
+```
+gdb mult-arm
+```
+
+This will start the debugger (gdb) and load in the ARM version of the multiply benchmark.
+Oncer you get to the gdb prompt enter:
+
+```
+disassemble multiply
+```
+
+This will disassemble the multiply function.  The second column in the disassembly is the byte offset
+of that instruction from the beginning of the function (in hex).  You will see that that this value
+increases by 4 for each instruction.  This is because each instruction in ARM mode is 4 bytes.  Quit
+the debbugger by entereing 'q' and then 'quit'.
+
+Open the debugger on the thumb1 version of the code.
+
+```
+gdb mult-thumb1
+```
+
+Again do:
+
+```
+disassemble multiply
+```
+
+Notice that the offset increases by 2 for each instruction since thumb1 instructions are all 16-bits.
+Finally run the debugger on the thumb2 code:
+
+
+```
+gdb mult-thumb2
+```
+
+And again disassemble the multiply function.  What do you notice about the instruction offsets this time?
+Why are you seeing this?
+
 
 #### 6. Analyze the data
 

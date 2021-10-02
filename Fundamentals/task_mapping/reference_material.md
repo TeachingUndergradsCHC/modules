@@ -8,10 +8,13 @@ concepts covered in this module. Furthermore, as yet, there is no definitive tex
 computing. Below we list two books that cover fundamentals of heterogeneous computing and the
 performance and programmability issues thereof. 
 
-* W Hwu Wen-mei. Heterogeneous System Architecture: A new compute platform infrastructure. Morgan
-  Kaufmann, 2015. 
+* David B. Kirk and W Hwu Wen-mei. Programming Massively Parallel Processors: A Hands-on Approach.
+  Morgan Kaufmann, Third Edition, 2017, Morgan Kaufman / NVIDIA. (e-book available for free to qualified
+  educators with [NVIDIA DLI](https://www.nvidia.com/en-us/training/) Teaching Kits)
 
-* Mohamed Zahran. Heterogeneous computing: Here to stay. Communications of the ACM, 60(3):42–45, 2017.
+* Mohamed Zahran. Heterogeneous computing: Hardware and Software Perspectives, ACM Books, 2019
+  (included [ACM DL](https://dl.acm.org/doi/book/10.1145/3281649) subscription).
+
 
 A paper describing the implementation of this module at Texas State University
 

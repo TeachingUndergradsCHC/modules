@@ -1,0 +1,84 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{url}
+
+\begin{document}
+
+In this lab, you will be implementing some simple image processing
+commands in SYCL.
+Begin by opening the Colab notebook:
+
+{\footnotesize \url{https://github.com/TeachingUndergradsCHC/modules/blob/master/Programming/sycl/syclBlur.ipynb}}
+
+Follow the directions in that notebook to set up SYCL in your Colab
+instance.
+One of the directions asks you to upload the files that we use this lab.
+The files are available from the module repo:
+
+{\footnotesize
+  \url{https://github.com/TeachingUndergradsCHC/modules/blob/master/Programming/sycl/}}
+
+You'll need to upload the library code that manages images in the .bmp
+file format ({\tt ppmFile.h} and {\tt ppmFile.c}) and also the image
+that you want to process; the sample I provide is {\tt 640x426.bmp}.
+
+The second to last code cell in the notebook runs the ``Hello World''
+program discussed in class.
+Run this example to check that everything is working.
+It should print out a series of messages, one per thread.
+
+Once you've verified that SYCL is installed and running properly, it's
+time to begin the main part of lab.
+The last code cell in the notebook is the first version of our image
+processing program.
+This version removes all the red from
+our sample image (640x426.bmp) and creates a new file
+{\tt out.bmp}.
+(You may have to refresh the file panel to the left by hitting the
+button with circular arrow to see it.)
+Download this file and observe that it looks basically the same as our
+original image, but the colors are slightly shifted.
+The image is stored as an array of RGB values, each color in a
+separate {\em channel} of the pixel.
+
+Let's look through the kernel to see how it works; it's the function
+{\tt cgh}.
+This kernel is called one each pixel of the input image.
+First, the variable {\tt idx} is used to index blocks of pixels,
+each pixel having 3 colors. The invocations are organized into 
+independent computations for each pixel.
+
+The image itself is stored linearly as triples of integers for each
+pixel.
+The elements of these pixels are called the {\em red channel}, the
+{\em green channel}, and the {\em blue channel} respectively because
+they store the amount of red, green, and blue in their pixel.
+The given code simply changes the value in the red channel to 0,
+leaving the other channels unchanged.
+This has the effect of removing all the red from the image.
+
+As a first task, let's change this kernel to convert the image into 
+grayscale (black and white).
+To do this, take the values of the red, green, and blue channels and
+average them (add them up and divide by 3).
+Set the value of each channel to be this average.
+Do this and make sure it's working before proceeding.
+
+Next, you will modify the kernet to create a blur effect.
+This is also done by taking an average, but a different kind.
+Each channel is blurred separately--- each gets the average of that
+channel's value for nearby pixels.
+Change the kernel to take an integer argument {\tt k} and 
+call it with value 5.
+This argument gives the distance over which you want to take the
+average.
+Specifically, compute the average of each channel value over all
+pixels differing by at most {\tt k} in each coordinate.
+The pixels in this region will form a square with side length
+{\tt 2k+1} since each coordinate differs by a value between -5 and 5.
+(Formally, the pixels in this region are those whose $L_\infty$
+ distance is $\leq$ {\tt k}.
+ It's ok if those words don't make sense to you (yet).)
+
+\end{document}

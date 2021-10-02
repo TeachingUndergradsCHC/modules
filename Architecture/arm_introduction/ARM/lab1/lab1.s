@@ -18,6 +18,8 @@ main:		PUSH	{LR}
 	@-------------
 	@ Start by putting 1 into R2
 
+	@ create a label for the beginning of your loop
+	
 	@ If R0 is 1 or 0 the code should branch to the label finish
         
 	@ Otherwise write a loop which multiples R0 by R2 each iteration

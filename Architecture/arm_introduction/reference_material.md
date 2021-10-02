@@ -16,3 +16,6 @@ Phil Schielke [\<Philip.Schielke@concordia.edu\>](philip.schielke@concordia.edu)
 
 #### MIPS
 * [SPIM MIPS simulator](http://spimsimulator.sourceforge.net)
+
+#### Additional ARM materials
+* [Course materials for a Comp Org class using ARM](https://github.com/philipschielke/ARM-teaching-materials.git)
