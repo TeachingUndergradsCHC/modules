@@ -1,5 +1,5 @@
 // This is lab3 of the Introduction to ARM module.
-// This code sets up three arrays of bytes (unigned characters)
+// This code sets up three arrays of bytes (unsigned characters)
 // and sums the first two arrays putting the result in the
 // third array.  The first call is made to a C function that adds
 // the arrays element by element.  Then, two calls are made to functions implemented
