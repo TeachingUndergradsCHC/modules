@@ -15,7 +15,7 @@ __global__ void hello() {
 }
 
 int main() {
-  hello<<<5,4>>>();  //launch 5 blocks of 4 threads each
+  hello<<<3,4>>>();  //launch 3 blocks of 4 threads each
 
   cudaDeviceSynchronize();  //make sure kernel completes
 }
