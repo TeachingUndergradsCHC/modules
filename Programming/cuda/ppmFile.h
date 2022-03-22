@@ -22,8 +22,8 @@
 	} Image;
 
 	Image *ImageCreate(int width, int height);
-	Image *ImageRead(char *filename);
-	void   ImageWrite(Image *image, char *filename);
+	Image *ImageRead(const char *filename);
+	void   ImageWrite(Image *image, const char *filename);
 
 	int    ImageWidth(Image *image);
 	int    ImageHeight(Image *image);
