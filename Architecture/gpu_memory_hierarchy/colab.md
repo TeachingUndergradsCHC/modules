@@ -49,6 +49,7 @@ hardware accelerator.
     menu. Then copy the following code into the new cell and hit the play
     button to run it:
     <pre>
+    !git config --global url.\"https://github.com/\".insteadOf git://github.com/\n
     !pip install git+git://github.com/andreinechaev/nvcc4jupyter.git
     %load_ext nvcc_plugin
     </pre>
