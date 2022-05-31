@@ -15,7 +15,7 @@ motivation behind their design.
 
 The modules are classified into five broads areas
 
-![alt text](./overview/figs/modules.png "Module Classification")
+![alt text](./overview/figs/modules.pdf "Module Classification")
 
 
 * [Fundamentals](./Fundamentals)
