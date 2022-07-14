@@ -9,9 +9,9 @@ This tutorial assumes we have a working environment for OpenMP-GCC target offloa
 have OpenMP target offloading set-up, the following tutorials may be helpful. 
 
   * [Setting up OpenMP-GCC target offloading on
-  Ubuntu](https://github.com/apanqasem/tutorials/tree/main/openmp/gpu_offloading.md)
+  Ubuntu](https://github.com/apanqasem/tutorials/blob/main/openmp/gpu_offloading.md)
   * [Setting up OpenMP-GCC target offloading on Google
-    Colab](https://colab.research.google.com/github/apanqasem/tutorials/tree/main/openmp/openmp_offload_colab.ipynb) 
+    Colab](https://colab.research.google.com/github/apanqasem/tutorials/blob/main/openmp/openmp_offload_colab.ipynb) 
 
 
 If multiple devices are connected to OpenMP then by default the `target` directive will offload the
