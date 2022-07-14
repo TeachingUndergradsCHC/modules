@@ -1,18 +1,30 @@
-### GPU Offloading with OpenMP: The Simplest Example
+# [Tutorial]: GPU Offloading with OpenMP: The Simplest Example   
+[D2] Heterogeneous Programming with OpenMP  
+Apan Qasem [\<apan@txstate.edu\>](apan@txstate.edu)
 
-OpenMP allows code blocks in C/C++ and Fortran application to be offloaded to accelerators. The latest OpenMP supports offloading to AMD, NVIDIA and Intel GPUs. In this tutorial, we will focus on NVIDIA GPUs only. 
 
-#### Environement
+## Prerequisites 
 
-First make sure that your enviroment is set of for GPU offloading. You may want to look at the following tutorials
+This tutorial assumes we have a working environment for OpenMP-GCC target offloading. If you don't
+have OpenMP target offloading set-up, the following tutorials may be helpful. 
 
- * [Setting up NVIDIA GPU offloading for OpenMP-GCC on Ubuntu](https://github.com/TeachingUndergradsCHC/modules/blob/master/Algorithms/hybrid_algorithms/resources/gpu_offloading.md) 
- * [OpenMP Device Check](../device_check.ipynb)
- 
+  * [Setting up OpenMP-GCC target offloading on
+  Ubuntu](https://github.com/apanqasem/tutorials/tree/main/openmp/gpu_offloading.md)
+  * [Setting up OpenMP-GCC target offloading on Google
+    Colab](https://colab.research.google.com/github/apanqasem/tutorials/tree/main/openmp/openmp_offload_colab.ipynb) 
+
+
+#### Overview 
+
+OpenMP allows code blocks in C/C++ and Fortran application to be offloaded to accelerators.  The
+latest OpenMP supports offloading to AMD, NVIDIA and Intel GPUs. In this tutorial, we will focus on
+NVIDIA GPUs only.   
+
  
 #### The `target` Directive 
 
-The `omp target` directive can be used to offload tasks to the GPU. The general format for the `target` directive is shown below 
+The `omp target` directive can be used to offload tasks to the GPU. The general format for the
+`target` directive is shown below 
 
 ```C++
 
@@ -183,7 +195,7 @@ int main() {
 
 Not surprisingly, CPU is much faster. 
 
-### Offloading Parallel Code 
+#### Offloading Parallel Code 
 
 We almost never want to offload sequential tasks to the GPU. Any code that we want to offload to the GPU should be parallelized first. OpenMP makes this part easy as well. We can insert any `omp` pragma inside the offloaded region to paralellize the code (there are few exceptions, which we will discuss later). 
 
@@ -302,6 +314,6 @@ On the CPU, the parallel version is actually slower than sequential. _Can we exp
 
 We will notice that in this example, each thread is doing very little work (just one multiplication and store). On the CPU, which consists of complex powerful processing cores, this type of fine-grain parallelism often does not yield good results. The GPU on the other hand consists of _many_ simple cores and can execute this type of parallel code more efficiently. 
 
-### Summary
+#### Summary
 
 We have learned how to offload parallel tasks to GPU using the `target` directive. This example is very simple, however. In this example, we let OpenMP make all the decisions about data mappin and thread creation and scheduling. To get better performance out of GPUs we will want control over these. We will look at the various clauses associated with the `target` that provides mechansims for explicit data mapping and creation of teams of threads. 

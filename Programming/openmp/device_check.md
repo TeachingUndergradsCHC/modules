@@ -1,6 +1,22 @@
-### OpenMP Device Check 
+# [Tutorial]: OpenMP Device Check for Task Offloading  
+[D2] Heterogeneous Programming with OpenMP  
+Apan Qasem [\<apan@txstate.edu\>](apan@txstate.edu)
 
-OpenMP uses host-device programming model. Multiple devices are connected to a host. Initial thread begins execution on the host. Tasks are offloaded to devices. In this model a GPU is a _device_. For GPU `target` offloading to work, we need to make sure that at least one GPU is connected to OpenMP. The following program checks and reports the number of devices connected to OpenMP. 
+## Prerequisites 
+
+This tutorial assumes we have a working environment for OpenMP-GCC target offloading. If you don't
+have OpenMP target offloading set-up, the following tutorials may be helpful. 
+
+  * [Setting up OpenMP-GCC target offloading on
+  Ubuntu](https://github.com/apanqasem/tutorials/tree/main/openmp/gpu_offloading.md)
+  * [Setting up OpenMP-GCC target offloading on Google
+    Colab](https://colab.research.google.com/github/apanqasem/tutorials/tree/main/openmp/openmp_offload_colab.ipynb) 
+
+
+OpenMP uses host-device programming model. Multiple devices are connected to a host. Initial thread
+begins execution on the host. Tasks are offloaded to devices. In this model a GPU is a _device_. For
+GPU `target` offloading to work, we need to make sure that at least one GPU is connected to
+OpenMP. The following program checks and reports the number of devices connected to OpenMP.  
 
 The cell below with can be edited in-place. When executed, the cell will save the file `device_check.cpp` in the current directory. 
 

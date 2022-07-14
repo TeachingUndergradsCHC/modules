@@ -1,13 +1,31 @@
-### Moving Data Between Host and Device
+# [Tutorial]: Moving Data Between Host and Device 
+[D2] Heterogeneous Programming with OpenMP  
+Apan Qasem [\<apan@txstate.edu\>](apan@txstate.edu)
+
+## Prerequisites 
+
+This tutorial assumes we have a working environment for OpenMP-GCC target offloading. If you don't
+have OpenMP target offloading set-up, the following tutorials may be helpful. 
+
+  * [Setting up OpenMP-GCC target offloading on
+  Ubuntu](https://github.com/apanqasem/tutorials/tree/main/openmp/gpu_offloading.md)
+  * [Setting up OpenMP-GCC target offloading on Google
+    Colab](https://colab.research.google.com/github/apanqasem/tutorials/tree/main/openmp/openmp_offload_colab.ipynb) 
+
 
 #### Objective 
 
-This tutorial shows how we can use the `map` clause with the `target data` directive to copy data to and from the GPU. 
+This tutorial shows how we can use the `map` clause with the `target data` directive to copy data to
+    and from the GPU. 
 
 #### Overview 
-The CPU and GPU have separate memory spaces. When we want the GPU to access data allocated on the CPU (or _vice versa_), we need to copy the data from one memory to the other. By default OpenMP will copy all variables within lexical scope to and from the device. Notwithstanding, in certain cases we need to tell OpenMP which data we want copied. 
+The CPU and GPU have separate memory spaces. When we want the GPU to access data allocated on the
+    CPU (or _vice versa_), we need to copy the data from one memory to the other. By default OpenMP
+    will copy all variables within lexical scope to and from the device. Notwithstanding, in certain
+    cases we need to tell OpenMP which data we want copied. 
 
-The code below performs a vector addition. The `target` directive has been used to offload the vector addition task to the GPU. 
+The code below performs a vector addition. The `target` directive has been used to offload the
+    vector addition task to the GPU. 
 
 
 ```python
@@ -84,7 +102,9 @@ Let's compile and run this code.
 
 
 #### The `target data` construct 
-The example code uses static allocation for the array A, B, and C. This is very limiting and will rarely appear in practice. Let's modify the code to do dynamic allocation of A. We will save this version of the code as `vec_add_dynamic.cpp`  
+The example code uses static allocation for the array A, B, and C. This is very limiting and will
+rarely appear in practice. Let's modify the code to do dynamic allocation of A. We will save this
+version of the code as `vec_add_dynamic.cpp`   
 
 
 ```python

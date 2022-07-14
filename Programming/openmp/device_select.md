@@ -1,6 +1,23 @@
-### Selecting a GPU Device
+# [Tutorial]: Selecting a Device for OpenMP Task Offloaidng  
+[D2] Heterogeneous Programming with OpenMP  
+Apan Qasem [\<apan@txstate.edu\>](apan@txstate.edu)
 
-If multiple devices are connected to OpenMP then by default the `target` directive will offload the task to the _default_ GPU. Generally, the default GPU is the one with device ID 0. In some cases, we may want to specify on which device we want our code to run. To do this we can combine the `device` clause with the `target` directive.
+
+## Prerequisites 
+
+This tutorial assumes we have a working environment for OpenMP-GCC target offloading. If you don't
+have OpenMP target offloading set-up, the following tutorials may be helpful. 
+
+  * [Setting up OpenMP-GCC target offloading on
+  Ubuntu](https://github.com/apanqasem/tutorials/tree/main/openmp/gpu_offloading.md)
+  * [Setting up OpenMP-GCC target offloading on Google
+    Colab](https://colab.research.google.com/github/apanqasem/tutorials/tree/main/openmp/openmp_offload_colab.ipynb) 
+
+
+If multiple devices are connected to OpenMP then by default the `target` directive will offload the
+task to the _default_ GPU. Generally, the default GPU is the one with device ID 0. In some cases, we
+may want to specify on which device we want our code to run. To do this we can combine the `device`
+clause with the `target` directive. 
 
 Consider the following example code that scales the values in a floating-point array
 
