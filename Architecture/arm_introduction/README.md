@@ -44,7 +44,7 @@ Having completed this module, students should be able to:
   noting differences with MIPS
   * [Slide Deck](./ARM/Thumb_intro.pptx): Introduction to ARM's Thumb mode
   * [Slide Deck](./ARM/NEON_intro.pptx): Introduction to ARM's NEON SIMD coprocessor
-  * [Instructor Notes](./ARM/ARM_intro_lecture_notes.pptx):  Instructor
+  * [Instructor Notes](./ARM/ARM_intro_lecture_notes.docx):  Instructor
     notes for above slide decks.
   * [Lab](./ARM/lab1/lab1.md): A lab designed to introduce students to the ARM ISA
   * [Lab](./ARM/lab2/lab2.md): A lab where students can experiment with the tradeoffs between ARM, Thumb1, and Thumb2 code
