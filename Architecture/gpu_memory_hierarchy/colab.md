@@ -29,21 +29,6 @@ Create a new notebook using the option at the bottom.
 runtime type" in the Runtime menu and selecting GPU as the desired type of
 hardware accelerator.
 
-1. 
-    <pre>
-    !apt update -qq;
-    !wget https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb;
-    !dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64-deb;
-    !apt-key add /var/cuda-repo-8-0-local-ga2/7fa2af80.pub;
-    !apt-get update -qq;
-    !apt-get install cuda gcc-5 g++-5 -y -qq;
-    !apt install cuda-8.0;
-    </pre>
-    This step take several minutes since it involves installing the CUDA
-    development tools into the notebook.
-    It is the main drawback of using a Colab rather than a server, on
-    which access would be quick once the tools are installed once.
-
 1. Copy the following code into the first cell of the notebook
     (without leading spaces) and hit the "play button":
     <pre>
