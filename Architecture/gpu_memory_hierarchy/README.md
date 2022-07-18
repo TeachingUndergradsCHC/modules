@@ -1,6 +1,7 @@
 ## [C2] GPU Memory Hierarchy 
 Jacob Newcomb,
 Choudry Abdul Rehman,
+Justin Douty,
 David Bunde [\<dbunde@knox.edu\>](mailto:dbunde@knox.edu)
 
 ### Description
