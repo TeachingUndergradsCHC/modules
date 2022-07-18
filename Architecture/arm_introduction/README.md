@@ -1,5 +1,6 @@
 ## [C1] Heterogeneous Architectures I
-Phil Schielke [\<Philip.Schielke@concordia.edu\>](philip.schielke@concordia.edu)
+Phil Schielke,
+David Bunde [\<dbunde@knox.edu\>](dbunde@knox.edu)
 
 ### Description 
 This module introduces students to the basics of the ARM architecture.
