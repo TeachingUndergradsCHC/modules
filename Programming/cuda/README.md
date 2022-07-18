@@ -1,6 +1,6 @@
 ## [D1] Introduction to CUDA Programming
 
-Kartikay Bhuchar, Amar Puri, Abhishek Thapa, and
+Kartikay Bhuchar, Justin Douty, Amar Puri, Abhishek Thapa, and
 David Bunde [\<dbunde@knox.edu\>](mailto:dbunde@knox.edu)
 
 ### Description
