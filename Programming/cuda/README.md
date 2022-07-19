@@ -80,7 +80,7 @@ The teaching material included with this module are the following:
   * Files for lab:
     * [Colab notebook](./cudaBlur.ipynb)  (open it and then click
     "open in colab")
-    * Lab handout: [.pdf](./lab.pdf) or [.tex](./lab.tex)
+    * Lab handout: [.pdf](./lab.pdf) or [.tex](./lab.tex).  When I used this in class, I gave the URLs at the top to the students via our course management system rather than including them in the handout.
     * [ppmFile.h](./ppmFile.h), [ppmFile.c](./ppmFile.c): library
     files for dealing with ppm files
     * [640x426.ppm](./640x426.ppm): sample image file (can also use your own)
