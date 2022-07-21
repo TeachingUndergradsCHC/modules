@@ -1,6 +1,7 @@
 ## [C2] GPU Memory Hierarchy 
 Jacob Newcomb,
 Choudry Abdul Rehman,
+Justin Douty,
 David Bunde [\<dbunde@knox.edu\>](mailto:dbunde@knox.edu)
 
 ### Description
@@ -34,7 +35,6 @@ this module than to use ssh to access departmental computing
 resources.
 Colab provides an interactive computing environment running
 [Jupyter](https://jupyter.org/) notebooks with access to GPUs.
-Using GPUs does require installing the nvcc compiler.
 As an added wrinkle, the GPU students run on changes (thus, changing
 its number of cores and architecture) when they restart
 the notebook, which can lead to different results.

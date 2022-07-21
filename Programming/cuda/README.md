@@ -1,6 +1,6 @@
 ## [D1] Introduction to CUDA Programming
 
-Kartikay Bhuchar, Amar Puri, Abhishek Thapa, and
+Kartikay Bhuchar, Justin Douty, Amar Puri, Abhishek Thapa, and
 David Bunde [\<dbunde@knox.edu\>](mailto:dbunde@knox.edu)
 
 ### Description
@@ -30,7 +30,6 @@ this module than to use ssh to access departmental computing
 resources.
 Colab provides an interactive computing environment running
 [Jupyter](https://jupyter.org/) notebooks with access to GPUs.
-Using GPUs does require installing the nvcc compiler.
 As an added wrinkle, the GPU students run on changes (thus, changing
 its number of cores and architecture) when they restart
 the notebook, which can lead to different results.
@@ -81,7 +80,7 @@ The teaching material included with this module are the following:
   * Files for lab:
     * [Colab notebook](./cudaBlur.ipynb)  (open it and then click
     "open in colab")
-    * Lab handout: [.pdf](./lab.pdf) or [.tex](./lab.tex)
+    * Lab handout: [.pdf](./lab.pdf) or [.tex](./lab.tex).  When I used this in class, I gave the URLs at the top to the students via our course management system rather than including them in the handout.
     * [ppmFile.h](./ppmFile.h), [ppmFile.c](./ppmFile.c): library
     files for dealing with ppm files
     * [640x426.ppm](./640x426.ppm): sample image file (can also use your own)

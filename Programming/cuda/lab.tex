@@ -23,6 +23,7 @@ These files are the library code that manages images in the .ppm
 file format ({\tt ppmFile.h} and {\tt ppmFile.c}) and also the image
 that you want to process; the sample I provide is {\tt 640x426.ppm}.
 
+\paragraph{Hello World!}
 The first really interesting code cell in the notebook is the second
 to last one.
 It runs the ``Hello World'' program discussed in class.
@@ -35,6 +36,7 @@ In particular, I suggest that you change the numbers in the
 {\tt <<< >>>} in {\tt main}.
 These control the numbers of blocks and threads per block respectively.
 
+\paragraph{Removing Red.}
 Once you’re comfortable with the ``Hello World'' program, it’s
 time to begin the main part of lab.
 The last code cell in the notebook
@@ -45,6 +47,8 @@ and creates a new file {\tt out.ppm}.
 by hitting the button with circular arrow to see {\tt out.ppm}.)
 Download this file and observe that it looks basically the same as our
 original image, but the colors are slightly shifted.
+(If you’re on a Mac, Preview will open the file.
+ If you’re on a Windows system, upload the file to {\tt photopea.com} to view it.)
 The image is stored as an array of RGB values, each color in a
 separate channel of the pixel. 
 
@@ -71,6 +75,7 @@ The given code simply changes the value in the red channel to 0,
 leaving the other channels unchanged.
 This has the effect of removing all the red from the image. 
 
+\paragraph{Grayscale.}
 As a first task, let's change this kernel to convert the image into
 grayscale (black and white).
 To do this, take the values of the red, green, and blue channels and
@@ -79,21 +84,25 @@ Set the value of all three channels to be this average.
 Run the resulting program and verify that {\tt out.ppm} is now a
 grayscale image before proceeding.
 
+\paragraph{Blurring.}
 Next, you will modify the kernel to create a blur effect.
 This is also done by taking an average, but a different sort of average.
 Each channel is blurred separately--- each gets the average of that
 channel’s value for nearby pixels.
-Change the kernel to take an integer argument {\tt k} and
-have {\tt main} call it with value 5.
-The kernel should use this argument as the distance over which to
-compute the average. 
 Specifically, the red value of a pixel should be set to the average of
-the original red values of all the pixels differing by at most $k$ in each
-coordinate.
-The pixels differing by at most $k$ form a square with side
-length $2k+1$ since each coordinate differs by a value between $-k$ and
-$k$.
-(Formally, the pixels in this region are those whose $L_\infty$
-distance is $\leq k$.
-It’s ok if those words don’t make sense to you (yet).)
+the original red values for the 3x3 group of pixels centered on $p$.
+Similarly, the green value of $p$ shoud be the average of their green
+values and the blue value of $p$ shoudl be the average of their blue
+values.
+Pixels on the boundary of the image don't have neighbors in all
+directions; just leave these pixels unchanged.
+
+\paragraph{At the end of the period.}
+Your code will disappear when you close Colab.
+In order to be able to come back to it (or turn it in), copy the code
+of your kernel into a text file.
+Then, if you want to return, start with the original notebook and
+follow the earlier steps to set it up again before pasting in your
+modified kernel function. 
+
 \end{document}

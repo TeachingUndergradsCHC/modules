@@ -1,0 +1,182 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{verbatim}
+\usepackage{alltt}
+
+%indicate that it's a pseudoinstruction
+\newcommand{\pseudo}{{\ensuremath\ast}}
+
+\begin{document}
+
+\begin{center}
+  \bf\LARGE Assembly Operations
+\end{center}
+
+The right column gives the command followed by its arguments.
+Arguments beginning with $r$ are registers.
+An {\tt imm} argument is a number; its subscript
+is the maximum size in bits.
+For commands with a result, {\tt rd} is the
+destination.
+Operations marked with \pseudo\ are pseudoinstructions, which
+translate into other instructions.
+
+\vspace{1em}
+\noindent
+\textbf{Arithmetic operations}
+\begin{center}
+\begin{tabular}{ll}
+Add & {\tt add rd, rs, rt} \\
+%Add w/o overflow & {\tt addu rd, rs, rt} \\
+Add immediate & {\tt addi rd, rs, }$\mathtt{imm}_{16}$ \\
+%Add immediate w/o overflow & {\tt addiu rd, rs, }$\mathtt{imm}_{16}$ \\
+Subtract & {\tt sub rd, rs, rt} \\
+%Subtract w/o overflow & {\tt subu rd, rs, rt} \\
+Multiply\pseudo & {\tt mulo rd, rs, rt} \\
+%Multiply w/o overflow & {\tt mul rd, rs, rt} \\
+Unsigned multiply\pseudo & {\tt mulou rd, rs, rt} \\
+Divide $s$ by $t$\pseudo & {\tt div rd, rs, rt} \\
+%Divide w/o overflow & {\tt divu rd, rs, rt} \\
+Remainder\pseudo & {\tt rem rd, rs, rt} \\
+Unsigned remainder\pseudo & {\tt remu rd, rs, rt} \\
+Absolute value & {\tt abs rd, rs} \\
+Negate value\pseudo & {\tt neg rd, rs} \\
+%Negate value w/o overflow\pseudo & {\tt negu rd, rs}
+\end{tabular}
+\end{center}
+
+\vspace*{-1em}
+\noindent
+\textbf{Bit operations}
+\begin{center}
+\begin{tabular}{ll}
+Count leading ones & {\tt clo rd, rs} \\
+Count leading zeros & {\tt clz rd, rs} \\
+Bitwise AND & {\tt and rd, rs, rt} \\
+Bitwise AND immediate & {\tt andi rd, rs, }$\mathtt{imm}_{16}$ \\
+Bitwise NOR & {\tt nor rd, rs, rt} \\
+Bitwise NOT & {\tt not rd, rs} \\
+Bitwise OR & {\tt or rd, rs, rt} \\
+Bitwise OR immediate & {\tt ori rd, rs, }$\mathtt{imm}_{16}$ \\
+Bitwise XOR & {\tt xor rd, rs, rt} \\
+Bitwise XOR immediate & {\tt xori rd, rs, }$\mathtt{imm}_{16}$ \\
+Shift left (by immediate; fill with 0s) & {\tt sll rd, rs, }$\mathtt{imm}_5$ \\
+Shift left (by register value; fill with 0s) & {\tt sllv rd, rs, rt} \\
+Shift right (by immediate; fill with 0s) & {\tt srl rd, rs, }$\mathtt{imm}_5$ \\
+Shift right (by register value; fill with 0s) & {\tt srlv rd, rs, rt} \\
+Shift right arithmetic (by immediate; fill with MSB) & {\tt sra rd, rs, }$\mathtt{imm}_5$ \\
+Shift right arithmetic (by register value; fill with MSB) & {\tt srav rd, rs, rt} \\
+Circular shift left\pseudo & {\tt rol rd, rs, rt} \\
+Circular shift right\pseudo & {\tt ror rd, rs, rt} \\
+Load immediate\pseudo & {\tt li rd, }$\mathtt{imm}_{32}$ \\
+System call (see table below) & {\tt syscall} 
+\end{tabular}
+\end{center}
+The behavior of {\tt syscall} is controlled by register $\$v0$.
+The following are useful codes:
+\vspace*{-1em}
+\begin{center}
+\begin{tabular}{ll}
+1 & Print int stored in $\$a0$ \\
+%2 & Print float stored in $\$f12$ \\
+%3 & Print double stored in $\$f12$ \\
+4 & Print string whose address is stored in $\$a0$ \\
+5 & Read int into $\$v0$ \\
+%6 & Read float into $\$f0$ \\
+%7 & Read double into $\$f0$ \\
+8 & Read string into buffer at address $\$a0$ of length $\$a1$ \\
+10 & Exit simulation \\
+11 & Print character stored in $\$a0$ \\
+12 & Read character into $\$v0$ 
+\end{tabular}
+\end{center}
+
+\newpage
+\noindent
+\textbf{Comparison, branch, and jump instructions} \\
+Set instructions place 1 or 0 in {\tt rd} depending on the
+condition.
+For example, {\tt seq} sets {\tt rd} to 1 when
+{\tt rs} $=$ {\tt rt}.
+\begin{center}
+\begin{tabular}{ll}
+Set if equal & {\tt seq rd, rs, rt} \\
+Set if not equal & {\tt sne rd, rs, rt} \\
+Set if greater than\pseudo & {\tt sgt rd, rs, rt} \\
+Set if greater than or equal\pseudo & {\tt sge rd, rs, rt} \\
+Set if greater than unsigned\pseudo & {\tt sgtu rd, rs, rt} \\
+Set if greater than or equal unsigned\pseudo & {\tt sgeu rd, rs, rt} \\
+Set if less than & {\tt slt rd, rs, rt} \\
+Set if less than immediate & {\tt slti rt, rs, }$\mathtt{imm}_{16}$ \\
+Set if less than or equal\pseudo & {\tt sle rd, rs, rt} \\
+Set if less than unsigned & {\tt sltu rd, rs, rt} \\
+Set if less than or equal unsigned\pseudo & {\tt sleu rd, rs, rt} \\
+Set if less than unsigned immediate & {\tt sltiu rd, rs, }$\mathtt{imm}_{16}$ \\
+Unconditional branch\pseudo & {\tt b label} \\
+%Branch if equals zero\pseudo & {\tt beqz rs, label} \\
+%Branch if does not equal zero\pseudo & {\tt bnez rs, label} \\
+%Branch if greater than zero & {\tt bgtz rs, label} \\
+%Branch if less than zero & {\tt bltz rs, label} \\
+%Branch if greater than or equal to zero & {\tt bgez rs, label} \\
+%Branch if less than or equal to zero & {\tt blez rs, label} \\
+Branch if equal & {\tt beq rs, rt, label} \\
+Branch if not equal & {\tt bne rs, rt, label} \\
+Branch if greater than\pseudo & {\tt bgt rs, rt, label} \\
+Branch if greater than or equal\pseudo & {\tt bge rs, rt, label} \\
+Branch if greater than or equal unsigned\pseudo & {\tt bgeu rs, rt, label} \\
+Branch if greater than unsigned\pseudo & {\tt bgtu rs, rt, label} \\
+Branch if less than\pseudo & {\tt blt rs, rt, label} \\
+Branch if less than or equal\pseudo & {\tt ble rs, rt, label} \\
+Branch if less than or equal unsigned\pseudo & {\tt bleu rs, rt, label} \\
+Branch if less than unsigned\pseudo & {\tt bltu rs, rt, label} \\
+%Branch if greater than or equal to zero and link & {\tt bgezal rs, label} \\
+%Branch if less than zero and link & {\tt bltzal rs, label} \\
+%Jump immediate & {\tt j }$\mathtt{imm}_{26}$ \\
+%Jump register & {\tt jr rs} \\
+%Jump and link & {\tt jal }$\mathtt{imm}_{26}$ \\
+%Jump to address in $s$ and link to $d$ & {\tt jalr rs, rd} \\
+\end{tabular}
+\end{center}
+
+\noindent
+\textbf{Memory instructions} \\
+\begin{center}
+\begin{tabular}{ll}
+``the following goes in the text segment'' & {\tt .text} \\
+``the following goes in the data segment'' & {\tt .data} \\
+``store {\tt str} as a string'' & {\tt .ascii str} \\
+``store {\tt str} as a null-terminated string'' & {\tt .asciiz str} \\
+``store these words in memory'' & {\tt .word w1 w2 \ldots} \\
+``reserve {\tt n} bytes of space'' & {\tt .space n} \\
+``align on $2^n$-byte boundary'' & {\tt .align n} \\
+Load address (not contents) \pseudo & {\tt la rd, address} \\
+Load byte & {\tt lb rd, address} \\
+Load unsigned byte & {\tt lbu rd, address} \\
+Store byte & {\tt sb rt, address} \\
+Load word & {\tt lw rd, address} \\
+Store word & {\tt sw rd, address} \\
+%Load halfword & {\tt lh rd, address} \\
+%Load unsigned halfword & {\tt lhu rd, address} \\
+\end{tabular}
+\end{center}
+
+The normal load instructions for less than a word sign-extend the
+value; the unsigned versions do not.
+Addresses for memory instructions can be any of the following forms:
+\nopagebreak
+\begin{center}
+\begin{tabular}{ll}
+(register) & contents of register \\
+imm & immediate \\
+imm(register) & contents of register + immediate \\
+label & address of label \\
+label $\pm$ imm & address of label $\pm$ immediate \\
+label $\pm$ imm(register) & address of label $\pm$ (immediate+register)
+\end{tabular}
+\end{center}
+
+
+%\subsection*{Floating point instructions}
+
+\end{document}
