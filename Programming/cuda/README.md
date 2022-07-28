@@ -87,7 +87,8 @@ The teaching material included with this module are the following:
     * [noRed.cu](./noRed.cu): kernel that removes red from the image;
     this file is included in the Colab notebook so you don't need this
     file unless you are running the lab outside the notebook
-
+  * [Some introductory references about CUDA](references.md) 
+  
 All material available for download from the [ToUCH git repository](https://github.com/TeachingUndergradsCHC/modules.git)  
 
 ### References 
