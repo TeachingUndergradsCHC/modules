@@ -1,5 +1,5 @@
 ## [C1] Heterogeneous Architectures I
-Phil Schielke,
+Phil Schielke, Luke Aschenberg,
 David Bunde [\<dbunde@knox.edu\>](dbunde@knox.edu)
 
 ### Description 
