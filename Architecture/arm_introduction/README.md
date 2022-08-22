@@ -50,8 +50,8 @@ Having completed this module, students should be able to:
   * [Lab](./ARM/lab1/lab1.md): A lab designed to introduce students to the ARM ISA
   * [Lab](./ARM/lab2/lab2.md): A lab where students can experiment with the tradeoffs between ARM, Thumb1, and Thumb2 code
   * [Lab](./ARM/lab3/lab3.md): A lab in which students rewrite some assembly code to utilize ARM NEON instructions.
-  * Long ARM Cheatsheet (2 page version): ([.pdf](./ARM/ARM_cheatsheet_long.pdf), [.tex](./ARM/ARM_cheatsheet_long.tex))
-  * Short ARM Cheatsheet (1 page version; contains subset of 2 page version): ([.pdf](./ARM/ARM_cheatsheet_short.pdf), [.tex](./ARM/ARM_cheatsheet_short.tex))
+  * ARM Cheatsheet (2 page version): ([.pdf](./ARM/ARM_cheatsheet_long.pdf), [.tex](./ARM/ARM_cheatsheet_long.tex))
+  * ARM Cheatsheet (1 page version; contains subset of 2 page version): ([.pdf](./ARM/ARM_cheatsheet_short.pdf), [.tex](./ARM/ARM_cheatsheet_short.tex))
   * MIPS ISA cheatsheet (2 page version) ([.pdf](./MIPS/MIPS_cheatsheet_long.pdf), [.tex](./MIPS/MIPS_cheatsheet_long.tex))
   * MIPS ISA cheatsheet (1 page version; contains subset of instructions from the 2-page version) ([.pdf](./MIPS/MIPS_cheatsheet_short.pdf), [.tex](./MIPS/MIPS_cheatsheet_short.tex))
   * [Reference Material](./reference_material.md): additional resources for instructors
