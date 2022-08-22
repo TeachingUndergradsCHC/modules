@@ -1,0 +1,102 @@
+\documentclass{article}
+
+\usepackage{fullpage}
+\usepackage{verbatim}
+\usepackage{alltt}
+\usepackage{url}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+{\LARGE {\bf ARM Assembly Operations}}
+\end{center}
+
+\vspace{1em}
+\noindent
+\textbf{Simplest Complete Program}
+(compile with {\tt gcc -o filename filename.s}; run with {\tt ./filename})
+\begin{alltt}
+    .global main
+    main:
+        mov r7, \#1           @exit system call
+        svc \#0
+\end{alltt}
+
+\vspace{1em}
+\noindent
+\textbf{Basic operations}
+
+Argument {\tt dr} is the register in which to store the result.
+Operands {\tt or} must be a register (e.g.\ {\tt r1}).
+Operands {\tt oi} can be a register or an immediate (e.g.\ {\tt \#5}).
+The argument {\tt \#0} for {\tt svc} must be this value.
+
+\begin{tabular}{ll}
+Add & {\tt add dr, or, oi} \\
+Subtract ({\tt or} $-$ {\tt oi}) & {\tt sub dr, or, oi} \\
+Reverse subtract ({\tt oi} $-$ {\tt or}) & {\tt rsb dr, or, oi} \\
+Multiply ({\tt dr} and {\tt or1} cannot be the same) & {\tt mul dr, or1, or2} \\
+Divide signed numbers\footnotemark ({\tt or1} $/$ {\tt or2}) & {\tt sdiv dr, or1, or2} \\
+%Divide unsigned numbers ({\tt or1} by {\tt or2}) & {\tt udiv dr, or1, or2} \\
+Logical shift left ({\tt oi} must be immediate) & {\tt lsl dr, or, oi} \\
+Copy (from {\tt oi} to {\tt dr}) & {\tt mov dr, oi} \\
+Compare {\tt or} to {\tt oi} and set comparison flags \hspace{2em} & {\tt cmp or, oi} \\
+Branch to {\tt label} & {\tt b {\em address}} \\
+Branch and link & {\tt bl {\em address}} \\ 
+System call (see table below) & {\tt svc \#0} \\
+\end{tabular} \\
+\footnotetext{Requires the compile flag {\tt -mcpu=cortex-a7} for {\tt gcc};
+  see \url{https://forums.raspberrypi.com/viewtopic.php?t=320122}}
+\hspace*{6em}{\tt svc \#0} is controlled by the contents of register {\tt r7}: \\
+\hspace*{6em}\begin{tabular}{ll}
+1 & Exit program \\
+3 & Read string ({\tt r2} bytes long) and store using address in {\tt r1}.
+  {\tt r0} must be \#0 (standard input) \\
+4 & Print string ({\tt r2} bytes long) whose address is stored in {\tt r1}.
+  {\tt r0} must be \#1 (standard output) \\
+\end{tabular}
+
+\vspace{1em}
+\noindent
+\textbf{Conditional Suffixes}
+
+All instructions can be used conditionally (based on the last call to
+{\tt cmp}) by adding one of these suffixes.
+
+\begin{tabular}{llrll}
+If flags are set to ``equal'' & {\tt eq} & \hspace{1em} & If flags are set to ``not equal'' & {\tt ne} \\
+If flags are set to ``greater than or equal'' & {\tt ge} & & If flags are set to ``less than or equal'' & {\tt le} \\
+If flags are set to ``greater than'' & {\tt gt} & & If flags are set to ``less than'' & {\tt lt} \\
+\end{tabular}
+
+\vspace{1em}
+\noindent
+\textbf{Memory instructions}
+
+\hspace*{2em}\begin{tabular}{ll}
+Switch to the text segment & {\tt .text} \\
+Switch to the data segment & {\tt .data} \\
+Store {\tt str} as a null-terminated string & {\tt .asciz "str"} \\
+Reserve {\tt oi} bytes of space ({\tt oi} must be immediate) \hspace{2em} & {\tt .space oi} \\
+Create word ({\tt or} can be a string) & {\tt .word or} \\
+Load word from {\tt \em address} & {\tt ldr dr, {\em address}} \\
+Load address of {\tt \em labelText} & {\tt ldr dr, =\#{\em labelText}} \\
+Store word at {\tt \em address} & {\tt str or, {\em address}} \\
+Load byte from {\tt \em address} & {\tt ldrb dr, {\em address}} \\
+Store byte at {\tt \em address} & {\tt strb or, {\em address}} \\
+Push register values to the stack & {\tt push \{{\em reglist}\} } \\
+Pop register values from the stack & {\tt pop \{{\em reglist}\}} \\
+\end{tabular}
+
+\vspace{0.5em}
+{\tt\em address} can be {\tt [or]} or {\tt [or, oi]}, with the values
+being added together when {\tt oi} is provided
+
+{\tt\em reglist} is a comma-separated list of registers and ranges of
+registers (e.g.\ {\tt r1, r5-r7})
+
+one more line
+
+\end{document}
